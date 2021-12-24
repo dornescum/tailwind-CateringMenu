@@ -2,6 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 import Head from 'next/head'
 import Layout from "../components/UI/Layout";
+import Link from "next/link";
 
 function HomePage(props) {
     const {products}= props;
@@ -17,7 +18,11 @@ function HomePage(props) {
               <h1>HomePage</h1>
               <ul>
                   {products.map((product)=>{
-                      return <li key={product.id}>{product.title}</li>
+                      return <li key={product.id} style={{textDecoration:'underline'}}>
+                          <Link href={`/products/${product.id}`}>
+                              {product.title}
+                          </Link>
+                        </li>
 
                   })}
               </ul>
@@ -27,17 +32,18 @@ function HomePage(props) {
 }
 export async function getStaticProps(){
     const filePath = path.join(process.cwd(), 'data', 'products.json');
-    console.log(filePath);
+    // console.log(filePath);
     const jsonData = await fs.readFile(filePath);
-    console.log(jsonData);
+    // console.log(jsonData);
     const data = JSON.parse(jsonData);
-    console.log(data);
+    // console.log(data);
 
     return {
         props: {
             // products:[{id: 'p1', title: 'product 1'}]
             products:data.products
-        }
+        },
+        revalidate:10
     }
 }
 export default HomePage;
