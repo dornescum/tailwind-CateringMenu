@@ -1,31 +1,47 @@
+import fs from "fs/promises";
+import path from "path";
 import Head from 'next/head'
 import Layout from "../components/UI/Layout";
 
 function HomePage(props) {
     const {products}= props;
     console.log(products);
+
   return (
       <main>
+           <Head>
+               <title>Create Next App</title>
+               <link rel="icon" href="/favicon.ico" />
+           </Head>
           <Layout>
               <h1>HomePage</h1>
               <ul>
                   {products.map((product)=>{
                       return <li key={product.id}>{product.title}</li>
+
                   })}
               </ul>
           </Layout>
       </main>
   )
 }
-
-export default HomePage;
 export async function getStaticProps(){
+    const filePath = path.join(process.cwd(), 'data', 'products.json');
+    console.log(filePath);
+    const jsonData = await fs.readFile(filePath);
+    console.log(jsonData);
+    const data = JSON.parse(jsonData);
+    console.log(data);
+
     return {
         props: {
-            products:[{id: 'p1', title: 'product 1'}]
+            // products:[{id: 'p1', title: 'product 1'}]
+            products:data.products
         }
     }
 }
+export default HomePage;
+
 
 // <Head>
 //     <title>Create Next App</title>
