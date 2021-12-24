@@ -1,24 +1,37 @@
 import Head from 'next/head'
 import Layout from "../components/UI/Layout";
 
-export default function Home() {
+function HomePage(props) {
+    const {products}= props;
+    console.log(products);
   return (
-    <div className="">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
+      <main>
           <Layout>
               <h1>HomePage</h1>
+              <ul>
+                  {products.map((product)=>{
+                      return <li key={product.id}>{product.title}</li>
+                  })}
+              </ul>
           </Layout>
       </main>
-
-
-    </div>
   )
 }
+
+export default HomePage;
+export async function getStaticProps(){
+    return {
+        props: {
+            products:[{id: 'p1', title: 'product 1'}]
+        }
+    }
+}
+
+// <Head>
+//     <title>Create Next App</title>
+//     <link rel="icon" href="/favicon.ico" />
+// </Head>
+
 
 // <h1 className="text-6xl font-bold">
 //   Welcome to{' '}
@@ -88,3 +101,5 @@ export default function Home() {
 // </footer>
 
 // flex flex-col items-center justify-center min-h-screen py-2
+
+// flex flex-col items-center justify-center w-full flex-1 px-20 text-center
