@@ -21,6 +21,11 @@ const TheNavbar = () => {
 						<a className="link"> contact</a>
 					</Link>
 				</li>
+				<li>
+					<Link href={`/users`}>
+						<a className="link"> Users</a>
+					</Link>
+				</li>
 
 
 			</ul>
