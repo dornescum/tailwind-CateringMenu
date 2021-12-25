@@ -16,9 +16,9 @@ function HomePage(props) {
            </Head>
           <Layout>
               <h1>HomePage</h1>
-              <ul>
+              <ul className='m-4'>
                   {products.map((product)=>{
-                      return <li key={product.id} style={{textDecoration:'underline'}}>
+                      return <li key={product.id} style={{textDecoration:'underline'}} className='text-blue-400 first-letter:text-[#4ad860] text-3xl mx-2 my-4 p-6'>
                           <Link href={`/products/${product.id}`}>
                               {product.title}
                           </Link>
