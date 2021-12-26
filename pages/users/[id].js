@@ -26,6 +26,10 @@ export async function getServerSideProps(context) {
 	if (!data) {
 		return {
 			notFound: true,
+			// redirect:{
+			// 	destination:'/',
+			// 	permanent: true
+			// }
 		};
 	}
 
