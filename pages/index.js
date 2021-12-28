@@ -1,51 +1,59 @@
 import fs from "fs/promises";
 import path from "path";
-import Head from 'next/head'
+import Head from 'next/head';
 import Layout from "../components/UI/Layout";
 import Link from "next/link";
+import Test from "../components/Test";
+import Second from "../components/Second";
 
 function HomePage(props) {
-    const {products}= props;
-    console.log(products);
+	const {products} = props;
+	console.log(products);
 
-  return (
-      <main>
-           <Head>
-               <title>Create Next App</title>
-               <link rel="icon" href="/favicon.ico" />
-           </Head>
-          <Layout>
-              <h1>HomePage</h1>
-              <ul className='m-4'>
-                  {products.map((product)=>{
-                      return <li key={product.id} style={{textDecoration:'underline'}} className='text-blue-400 first-letter:text-[#4ad860] text-3xl mx-2 my-4 p-6'>
-                          <Link href={`/products/${product.id}`}>
-                              {product.title}
-                          </Link>
-                        </li>
+	return (
+		<main>
+			<Head>
+				<title>Create Next App</title>
+				<link rel="icon" href="/favicon.ico"/>
+			</Head>
+			<Layout>
+				<h1>HomePage</h1>
+				<ul className="m-4">
+					{products.map((product) => {
+						return <li key={product.id} style={{textDecoration: 'underline'}}
+								   className="text-blue-400 first-letter:text-[#4ad860] text-3xl mx-2 my-4 p-6">
+							<Link href={`/products/${product.id}`}>
+								{product.title}
+							</Link>
+						</li>;
 
-                  })}
-              </ul>
-          </Layout>
-      </main>
-  )
+					})}
+				</ul>
+				{/*<Test/>*/}
+                {/*<div className='my-4'></div>*/}
+				{/*<Second/>*/}
+			</Layout>
+		</main>
+	);
 }
-export async function getStaticProps(){
-    const filePath = path.join(process.cwd(), 'data', 'products.json');
-    // console.log(filePath);
-    const jsonData = await fs.readFile(filePath);
-    // console.log(jsonData);
-    const data = JSON.parse(jsonData);
-    // console.log(data);
 
-    return {
-        props: {
-            // products:[{id: 'p1', title: 'product 1'}]
-            products:data.products
-        },
-        revalidate:10
-    }
+export async function getStaticProps() {
+	const filePath = path.join(process.cwd(), 'data', 'products.json');
+	// console.log(filePath);
+	const jsonData = await fs.readFile(filePath);
+	// console.log(jsonData);
+	const data = JSON.parse(jsonData);
+	// console.log(data);
+
+	return {
+		props: {
+			// products:[{id: 'p1', title: 'product 1'}]
+			products: data.products
+		},
+		revalidate: 10
+	};
 }
+
 export default HomePage;
 
 

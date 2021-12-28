@@ -3,56 +3,88 @@ import Link from "next/link";
 
 const TheNavbar = () => {
 	const [navbarOpen, setNavbarOpen] = useState(false);
+	const handleClick = () => {
+		setNavbarOpen(!navbarOpen);
+		console.log('click');
+	};
 	return (
-		<nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-gray-200 mb-3">
-			<div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-				{/*=============*/}
-				<div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-					<Link href='/'>
-						<a className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-black">
-							Justa test
-						</a>
+		<nav className="bg-gray-200">
+			<div className='flex justify-between py-2'>
+				<div className='flex pl-4 mb-0 mt-1'>
+					<a href='/'>Logo</a>
+				</div>
+				<div className='hidden md:block'>
+					<ul className='flex'>
+						<li className='py-2 px-4'>
+							<Link href="/">
+								<a>Products</a>
+							</Link>
+						</li>
+						<li className='py-2 px-4'>
+							<Link href="/about">
+								<a>About </a>
+							</Link>
+						</li>
+						<li className='py-2 px-4'>
+							<Link href="/users">
+								<a>Users</a>
+							</Link>
+						</li>
+						<li className='py-2 px-4'>
+							<Link href="/contact">
+								<a>Contact</a>
+							</Link>
+						</li>
 
-					</Link>
+					</ul>
+				</div>
 
-					<button onClick={() => setNavbarOpen(!navbarOpen)}>
-						<div className='mr-4 lg:hidden' >
-							<svg aria-hidden="true" role="img" width="2em" height="2em"
-								 preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-								<path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" fill="currentColor"/>
-							</svg>
-						</div>
+
+				<div className="sm:hidden flex pr-4 ">
+					<button onClick={handleClick} className='transition hover:duration-300 hover:rotate-180 ease-in-out'>
+						<svg aria-hidden="true" role="img" width="2em" height="2em"
+							 preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+							<path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z" fill="currentColor"/>
+						</svg>
 					</button>
 				</div>
-				<div className={"lg:flex flex-grow items-center" + (navbarOpen ? " flex" : " hidden")} id="example-navbar-danger"/>
-				{/*=============*/}
-				<ul className='flex flex-col lg:flex-row list-none lg:ml-auto'>
-					<li>
-						<Link href={`/`}>
-							<a className="link"> Home</a>
-						</Link>
-					</li>
-					<li>
-						<Link href={`/about`}>
-							<a className="link"> About</a>
-						</Link>
-					</li>
-
-					<li>
-						<Link href={`/contact`}>
-							<a className="link"> contact</a>
-						</Link>
-					</li>
-					<li>
-						<Link href={`/users`}>
-							<a className="link"> Users</a>
-						</Link>
-					</li>
-
-
-				</ul>
 			</div>
 
+			<div className='flex flex-col mt-2 lg:hidden'>
+				<ul>
+					<li className={navbarOpen ? 'block py-2 px-4 italic': 'hidden'}>
+						<Link href='/' >
+							<a>
+								Products
+							</a>
+						</Link>
+					</li>
+				<li className={navbarOpen ? 'block py-2 px-4 italic': 'hidden'}>
+						<Link href='/' >
+							<a>
+								Products
+							</a>
+						</Link>
+					</li>
+				<li className={navbarOpen ? 'block py-2 px-4 italic': 'hidden'}>
+						<Link href='/' >
+							<a>
+								Products
+							</a>
+						</Link>
+					</li>
+				<li className={navbarOpen ? 'block py-2 px-4 italic': 'hidden'}>
+						<Link href='/' >
+							<a>
+								Products
+							</a>
+						</Link>
+					</li>
+
+				</ul>
+
+
+			</div>
 		</nav>
 	);
 };
