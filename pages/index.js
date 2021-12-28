@@ -5,6 +5,8 @@ import Layout from "../components/UI/Layout";
 import Link from "next/link";
 import Test from "../components/Test";
 import Second from "../components/Second";
+import ProductItem from "../components/ProductItem/ProductItem";
+import ProductList from "../components/ProductList/ProductList";
 
 function HomePage(props) {
 	const {products} = props;
@@ -29,6 +31,15 @@ function HomePage(props) {
 
 					})}
 				</ul>
+				{/*<ProductItem />*/}
+				<ul>
+					{products.map((item)=>{
+						return <div key={item.id} className='my-2 hover:drop-shadow-lg transition duration-300 ease-out cursor-pointer'>
+							<ProductItem title={item.title} desc={item.description} img={item.img} id={item.id}/>
+						</div>
+					})}
+				</ul>
+				{/*<ProductList />*/}
 				{/*<Test/>*/}
                 {/*<div className='my-4'></div>*/}
 				{/*<Second/>*/}
