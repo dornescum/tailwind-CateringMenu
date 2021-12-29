@@ -7,6 +7,7 @@ import Test from "../components/Test";
 import Second from "../components/Second";
 import ProductItem from "../components/ProductItem/ProductItem";
 import ProductList from "../components/ProductList/ProductList";
+import SwitchBtn from "../components/SwitchBtn/SwitchBtn";
 
 function HomePage(props) {
 	const {products} = props;
@@ -20,6 +21,7 @@ function HomePage(props) {
 			</Head>
 			<Layout>
 				<h1>HomePage</h1>
+				<SwitchBtn />
 				<ul className="m-4">
 					{products.map((product) => {
 						return <li key={product.id} style={{textDecoration: 'underline'}}
