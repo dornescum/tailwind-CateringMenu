@@ -11,7 +11,9 @@ const TheNavbar = () => {
 		<nav className="bg-gray-200">
 			<div className='flex justify-between py-2'>
 				<div className='flex pl-4 mb-0 mt-1'>
-					<a href='/'>Logo</a>
+					<Link href="/">
+						<a>Home </a>
+					</Link>
 				</div>
 				<div className='hidden md:block'>
 					<ul className='flex'>

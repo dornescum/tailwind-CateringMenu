@@ -4,14 +4,11 @@ import Head from 'next/head';
 import Layout from "../components/UI/Layout";
 import Link from "next/link";
 import Test from "../components/Test";
-import Second from "../components/Second";
 import ProductItem from "../components/ProductItem/ProductItem";
-import ProductList from "../components/ProductList/ProductList";
 import SwitchBtn from "../components/SwitchBtn/SwitchBtn";
 
 function HomePage(props) {
 	const {products} = props;
-	console.log(products);
 
 	return (
 		<main>
@@ -20,7 +17,7 @@ function HomePage(props) {
 				<link rel="icon" href="/favicon.ico"/>
 			</Head>
 			<Layout>
-				<h1>HomePage</h1>
+
 				<SwitchBtn />
 				<ul className="m-4">
 					{products.map((product) => {
@@ -41,10 +38,9 @@ function HomePage(props) {
 						</li>
 					})}
 				</ul>
-				{/*<ProductList />*/}
+
 				<Test/>
-                {/*<div className='my-4'></div>*/}
-				{/*<Second/>*/}
+
 			</Layout>
 		</main>
 	);

@@ -1,13 +1,15 @@
 import React from 'react';
 import Link from "next/link";
+import Image from "next/image";
 
 const ProductItem = ({img, title, subtitle, desc, id}) => {
 	return (
 		<div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
 			<div className="md:flex">
 				<div className="md:shrink-0">
-					<img className="h-48 w-full object-cover md:h-full md:w-48
-					brightness-200 md:brightness-50" src={img}
+					{/*md:w-48 h-48*/}
+					<Image className="w-full object-cover md:h-full block
+					brightness-200 md:brightness-50 " src={img}  width='200' height='200'
 						 alt={title} />
 				</div>
 				<div className="p-8">
