@@ -6,6 +6,9 @@ import Link from "next/link";
 import Test from "../components/Test";
 import ProductItem from "../components/ProductItem/ProductItem";
 import SwitchBtn from "../components/SwitchBtn/SwitchBtn";
+import Image from "next/image";
+import Photo from '../public/assets/next-test.jpg'
+
 
 function HomePage(props) {
 	const {products} = props;
@@ -40,7 +43,7 @@ function HomePage(props) {
 				</ul>
 
 				<Test/>
-
+				<Image src={Photo} layout='responsive'/>
 			</Layout>
 		</main>
 	);

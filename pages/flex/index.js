@@ -57,6 +57,10 @@ const Flex = () => {
 
 			<DropdownMenu />
 
+			<div className="flex justify-center -space-x-14">
+				<div className="mix-blend-multiply bg-blue-400 p-10 rounded-full">dsads</div>
+				<div className="mix-blend-multiply bg-pink-400 p-10 rounded-full">dsdadasdas</div>
+			</div>
 		</div>
 
 	);
