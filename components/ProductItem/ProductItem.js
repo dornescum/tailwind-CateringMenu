@@ -16,6 +16,7 @@ const ProductItem = ({img, title, subtitle, desc, id}) => {
 					<div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{title}</div>
 					<a href="#" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{subtitle}</a>
 					<p className="mt-2 text-gray-500">{desc}.</p>
+					<p>{subtitle}</p>
 					<Link href={`/products/${id}`} >
 						<a className='bg-gray-300 mx-4'>{title}</a>
 					</Link>

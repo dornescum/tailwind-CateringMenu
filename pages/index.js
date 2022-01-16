@@ -7,7 +7,8 @@ import Test from "../components/Test";
 import ProductItem from "../components/ProductItem/ProductItem";
 import SwitchBtn from "../components/SwitchBtn/SwitchBtn";
 import Image from "next/image";
-import Photo from '../public/assets/next-test.jpg'
+import Photo from '../public/assets/next-test.jpg';
+import FoodTemplate from "../components/FoodTemplate/FoodTemplate";
 
 
 function HomePage(props) {
@@ -17,33 +18,42 @@ function HomePage(props) {
 		<main>
 			<Head>
 				<title>Create Next App</title>
+				<script src="https://cdn.tailwindcss.com"></script>
 				<link rel="icon" href="/favicon.ico"/>
 			</Head>
 			<Layout>
 
-				<SwitchBtn />
-				<ul className="m-4">
-					{products.map((product) => {
-						return <li key={product.id} style={{textDecoration: 'underline'}}
-								   className="text-blue-400 first-letter:text-[#4ad860] text-3xl mx-2 my-4 p-6">
-							<Link href={`/products/${product.id}`}>
-								{product.title}
-							</Link>
-						</li>;
 
-					})}
-				</ul>
+
+				<FoodTemplate />
+				{/*<div className='flex justify-end my-4 pr-4'>*/}
+				{/*	<SwitchBtn />*/}
+				{/*</div>*/}
+
+				{/*<ul className="m-4">*/}
+				{/*	{products.map((product) => {*/}
+				{/*		return <li key={product.id} style={{textDecoration: 'underline'}}*/}
+				{/*				   className="text-blue-400 first-letter:text-[#4ad860] text-3xl mx-2 my-4 p-6">*/}
+				{/*			<Link href={`/products/${product.id}`}>*/}
+				{/*				{product.title}*/}
+				{/*			</Link>*/}
+				{/*		</li>;*/}
+				{/*	})}*/}
+				{/*</ul>*/}
 				{/*<ProductItem />*/}
-				<ul className='m-1'>
-					{products.map((item)=>{
-						return <li key={item.id} className='my-2 hover:drop-shadow-lg transition duration-300 ease-out cursor-pointer'>
-							<ProductItem title={item.title} desc={item.description} img={item.img} id={item.id}/>
-						</li>
-					})}
-				</ul>
+				{/*<ul className="m-1">*/}
+				{/*	{products.map((item) => {*/}
+				{/*		return <li key={item.id}*/}
+				{/*				   className="my-2 hover:drop-shadow-lg transition duration-300 ease-out cursor-pointer"*/}
+				{/*		id={item.id}>*/}
+				{/*			<ProductItem title={item.title} desc={item.description} img={item.img} id={item.id}*/}
+				{/*						 subtitle={item.subtitle}/>*/}
+				{/*		</li>;*/}
+				{/*	})}*/}
+				{/*</ul>*/}
 
-				<Test/>
-				<Image src={Photo} layout='responsive'/>
+				{/*<Test/>*/}
+				{/*<Image src={Photo} layout='responsive'/>*/}
 			</Layout>
 		</main>
 	);
