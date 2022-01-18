@@ -4,6 +4,7 @@ import Signal from "../../assets/icons/Signal";
 import Battery from "../../assets/icons/Battery";
 import SearchBox from "./SearchBox";
 import SwitchBtn from "../SwitchBtn/SwitchBtn";
+import Categories from "./Categories";
 
 const FoodTemplate = () => {
 	const time = new Date();
@@ -34,6 +35,7 @@ const FoodTemplate = () => {
 				<SwitchBtn />
 			</div>
 			<SearchBox />
+			<Categories title='pasta' description='some pasta' />
 		</div>
 	);
 };
