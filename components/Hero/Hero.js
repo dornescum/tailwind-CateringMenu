@@ -24,7 +24,7 @@ const Hero = () => {
 		// </div>
 		<div className=''>
 			{/*fixme error image*/}
-			<Image src={hero} className='w-full h-24' width='200' height='200' />
+			<Image src={hero} className='w-full h-24' width='200' height='200' alt='pasta image plate'/>
 		</div>
 	);
 };

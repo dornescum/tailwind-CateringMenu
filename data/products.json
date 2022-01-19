@@ -2,23 +2,82 @@
   "products": [
     {
       "id": "p1",
-      "title": "Product 1",
+      "title": "Salads",
       "description": "This is product 1",
       "subtitle": "testing subtitle",
       "img": "/assets/p1.jpg"
     },
     {
       "id": "p2",
-      "title": "Product 2",
+      "title": "Soups",
       "description": "This is product 2",
       "subtitle": "testing subtitle",
       "img": "/assets/p2.jpg"
     },
     {
       "id": "p3",
-      "title": "Product 3",
+      "title": "Pasta",
       "description": "This is product 3",
       "subtitle": "testing subtitle",
+      "img": "/assets/p3.jpg"
+    },
+    {
+      "id": "p4",
+      "title": "Burgers",
+      "description": "This is product 3",
+      "subtitle": "testing subtitle",
+      "img": "/assets/p3.jpg"
+    },
+    {
+      "id": "p5",
+      "title": "Chicken",
+      "description": "This is product 3",
+      "subtitle": "testing subtitle",
+      "img": "/assets/p3.jpg"
+    },
+    {
+      "id": "p6",
+      "title": "Pork",
+      "description": "This is product 3",
+      "subtitle": "testing subtitle",
+      "img": "/assets/p3.jpg"
+    },
+    {
+      "id": "p7",
+      "title": "Beef",
+      "description": "This is product 3",
+      "subtitle": "testing subtitle",
+      "img": "/assets/p3.jpg"
+    },
+    {
+      "id": "p8",
+      "title": "Recomandation",
+      "description": "This is product 3",
+      "subtitle": "testing subtitle",
+      "img": "/assets/p3.jpg"
+    },
+    {
+      "id": "p9",
+      "title": "Deserts",
+      "description": "This is product 3",
+      "subtitle": "testing subtitle",
+      "img": "/assets/p3.jpg"
+    },
+     {
+      "id": "p10",
+      "title": "Drinks",
+      "description": "This is product 3",
+      "subtitle": "testing subtitle",
+      "img": "/assets/p3.jpg"
+    }
+
+  ],
+  "salads": [
+    {
+      "id": "p31",
+      "title": "Product 31",
+      "description": "This is product 31",
+      "subtitle": "testing salads",
       "img": "/assets/p3.jpg"
     }
   ]

@@ -3,29 +3,34 @@ import path from "path";
 import Head from 'next/head';
 import Layout from "../components/UI/Layout";
 import Link from "next/link";
-import Test from "../components/Test";
-import ProductItem from "../components/ProductItem/ProductItem";
 import SwitchBtn from "../components/SwitchBtn/SwitchBtn";
 import Image from "next/image";
-import Photo from '../public/assets/next-test.jpg';
 import FoodTemplate from "../components/FoodTemplate/FoodTemplate";
 import Hero from "../components/Hero/Hero";
+import Categories from "../components/FoodTemplate/Categories";
 
 
 function HomePage(props) {
 	const {products} = props;
+	console.log(products);
 
 	return (
 		<main className='text-[Dongle]'>
 			<Head>
 				<title>Create Next App</title>
-				<script src="https://cdn.tailwindcss.com"></script>
 				<link rel="icon" href="/favicon.ico"/>
 			</Head>
 
 			<Layout>
 				<Hero />
 				<FoodTemplate />
+				<div className='flex flex-col md:flex-row flex-wrap'>
+					{products.map((item)=>{
+						return <div className='basis-1/2 md:basis-1/3' key={item.id}>
+							<Categories title={item.title} id={item.id} img={item.img}/>
+						</div>
+					})}
+				</div>
 			</Layout>
 		</main>
 	);
