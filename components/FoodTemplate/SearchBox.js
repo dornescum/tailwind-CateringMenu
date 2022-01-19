@@ -1,5 +1,5 @@
 import React from 'react';
-import ChevronRight from "../../assets/icons/ChevronRight";
+import ChevronRight from "../../assets-next/icons/ChevronRight";
 import { MdSearch, MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 
