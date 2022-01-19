@@ -39,50 +39,13 @@ const FoodTemplate = () => {
 
 	return (
 		<div className="bg-color-[#f4f4f4]">
-			{/*head*/}
-			<div className="flex justify-between h-8 py-6 px-2 items-center">
-				<div>
-					{hour} :<span> {minutes}</span>
-				</div>
-				<ul className="flex justify-around">
-					<li>
-						<WifiLogo/>
-					</li>
-					<li>
-						<Signal/>
-					</li>
-					<li>
-						<Battery/>
-					</li>
-				</ul>
-			</div>
-			{/*=============*/}
-			<div className="flex justify-end my-4 pr-4">
-				<SwitchBtn/>
-			</div>
 			<SearchBox/>
-			{/*<div className='flex flex-col md:flex-row flex-wrap'>*/}
-			{/*	{products.map((item)=>{*/}
-			{/*		return <div className='basis-1/2 md:basis-1/3' key={item.id}>*/}
-			{/*			<Categories title={item.title} id={item.id} img={item.img}/>*/}
-			{/*		</div>*/}
-			{/*	})}*/}
-			{/*</div>*/}
 			<div className="text-center mx-auto px-4 py-4 my-4">
 				<h4>Special of the day</h4>
 				<div className="flex flex-col md:flex-row bg-slate-50 mx-auto">
-					{/*{innerWidth > 786 ?*/}
-					{/*	<div>*/}
-					{/*		<Image src={img} alt="food" className="rounded-md w-24 h-24" width='300' height='100'/>*/}
-					{/*	</div>:*/}
-					{/*	<div>*/}
-					{/*		<Image src={img} alt="food" className="rounded-md w-24 h-24" width='100' height='100'/>*/}
-					{/*	</div>}*/}
-
 					<div className='p-4'>
 						<Image src={img} alt="food" className="rounded-md w-24 h-24" width='300' height='200'/>
 					</div>
-
 
 					<ul className='flex flex-col text-center mx-auto py-10'>
 						<li className='pb-2'>{title}</li>
