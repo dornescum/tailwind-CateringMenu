@@ -4,7 +4,18 @@ module.exports = {
 		'./components/**/*.{js,ts,jsx,tsx}',
 	],
 	theme: {
-		extend: {},
+		extend: {
+			colors:{
+				primary:"#cccccc",
+				secondary:{
+					100:"#f1f1f1",
+					200:"#f9f9f9",
+				}
+			},
+			fontFamily:{
+				body:['Dongle']
+			}
+		},
 	},
 	plugins: [
 		function ({addComponents}) {

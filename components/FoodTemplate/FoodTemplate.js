@@ -9,6 +9,9 @@ const products= [
 	{id: 1, img:`assets/p1.jpg`, description:"bla bla", title: 'product1'},
 	{id: 2, img:`assets/p2.jpg`, description:"bla bla", title: 'product2'},
 	{id: 3, img:`assets/p3.jpg`, description:"bla bla", title: 'product3'},
+	{id: 4, img:`assets/p3.jpg`, description:"bla bla", title: 'product3'},
+	{id: 5, img:`assets/p3.jpg`, description:"bla bla", title: 'product3'},
+	{id: 6, img:`assets/p3.jpg`, description:"bla bla", title: 'product3'},
 ]
 
 const FoodTemplate = () => {
@@ -40,7 +43,7 @@ const FoodTemplate = () => {
 				<SwitchBtn />
 			</div>
 			<SearchBox />
-			<div className='flex flex-col md:flex-row'>
+			<div className='flex flex-col md:flex-row flex-wrap'>
 				{products.map((item)=>{
 					return <div className='basis-1/2 md:basis-1/3' key={item.id}>
 						<Categories title={item.title} id={item.id} img={item.img}/>
