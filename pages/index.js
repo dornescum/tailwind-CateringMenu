@@ -12,7 +12,6 @@ import Categories from "../components/FoodTemplate/Categories";
 
 function HomePage(props) {
 	const {products} = props;
-	console.log(products);
 
 	return (
 		<main className='text-[Dongle]'>
@@ -27,7 +26,7 @@ function HomePage(props) {
 				<div className='flex flex-col md:flex-row flex-wrap'>
 					{products.map((item)=>{
 						return <div className='basis-1/2 md:basis-1/3' key={item.id}>
-							<Categories title={item.title} id={item.id} img={item.img}/>
+							<Categories title={item.title} id={item.id} img={item.img} link={item.link}/>
 						</div>
 					})}
 				</div>

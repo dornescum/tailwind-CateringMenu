@@ -6,15 +6,15 @@ import { MdClose } from "react-icons/md";
 const menus =[
 	{id:"m1", title:"Home", link:"/"},
 	{id:"m2", title:"Salads", link:"/salads"},
-	{id:"m3", title:"Soups", link:"/"},
-	{id:"m4", title:"Pasta", link:"/"},
-	{id:"m5", title:"Burgers", link:"/"},
-	{id:"m6", title:"Chicken", link:"/"},
-	{id:"m7", title:"Pork", link:"/"},
-	{id:"m8", title:"Beef", link:"/"},
-	{id:"m9", title:"Recomandations", link:"/"},
-	{id:"m10", title:"Desert", link:"/"},
-	{id:"m11", title:"Drinks", link:"/"},
+	{id:"m3", title:"Soups", link:"/soups"},
+	{id:"m4", title:"Pasta", link:"/pasta"},
+	{id:"m5", title:"Burgers", link:"/burgers"},
+	{id:"m6", title:"Chicken", link:"/chicken"},
+	{id:"m7", title:"Pork", link:"/pork"},
+	{id:"m8", title:"Beef", link:"/beef"},
+	{id:"m9", title:"Recommendations", link:"/recommendations"},
+	{id:"m10", title:"Desert", link:"/desert"},
+	{id:"m11", title:"Drinks", link:"/drinks"},
 ];
 
 const SidebarMenu = (props) => {

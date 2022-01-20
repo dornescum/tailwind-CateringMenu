@@ -20,10 +20,8 @@ const SearchBox = () => {
 						<div className='bg-pink-300 text-white p-2 rounded-md'>
 							<MdOutlineKeyboardArrowDown />
 						</div>
-
 					</div>
 				</div>
-
 			</div>
 		</div>
 	);

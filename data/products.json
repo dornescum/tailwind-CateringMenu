@@ -5,70 +5,80 @@
       "title": "Salads",
       "description": "This is product 1",
       "subtitle": "testing subtitle",
-      "img": "/assets/p1.jpg"
+      "img": "/assets/p1.jpg",
+      "link": "salads"
     },
     {
       "id": "p2",
       "title": "Soups",
       "description": "This is product 2",
       "subtitle": "testing subtitle",
-      "img": "/assets/p2.jpg"
+      "img": "/assets/p2.jpg",
+       "link": "soups"
     },
     {
       "id": "p3",
       "title": "Pasta",
       "description": "This is product 3",
       "subtitle": "testing subtitle",
-      "img": "/assets/p3.jpg"
+      "img": "/assets/p3.jpg",
+       "link": "pasta"
     },
     {
       "id": "p4",
       "title": "Burgers",
       "description": "This is product 3",
       "subtitle": "testing subtitle",
-      "img": "/assets/p3.jpg"
+      "img": "/assets/p3.jpg",
+       "link": "burgers"
     },
     {
       "id": "p5",
       "title": "Chicken",
       "description": "This is product 3",
       "subtitle": "testing subtitle",
-      "img": "/assets/p3.jpg"
+      "img": "/assets/p3.jpg",
+       "link": "chicken"
     },
     {
       "id": "p6",
       "title": "Pork",
       "description": "This is product 3",
       "subtitle": "testing subtitle",
-      "img": "/assets/p3.jpg"
+      "img": "/assets/p3.jpg",
+       "link": "pork"
     },
     {
       "id": "p7",
       "title": "Beef",
       "description": "This is product 3",
       "subtitle": "testing subtitle",
-      "img": "/assets/p3.jpg"
+      "img": "/assets/p3.jpg",
+       "link": "beef"
     },
     {
       "id": "p8",
       "title": "Recomandation",
       "description": "This is product 3",
       "subtitle": "testing subtitle",
-      "img": "/assets/p3.jpg"
+      "img": "/assets/p3.jpg",
+       "link": "recommendations"
     },
     {
       "id": "p9",
       "title": "Deserts",
       "description": "This is product 3",
       "subtitle": "testing subtitle",
-      "img": "/assets/p3.jpg"
+      "img": "/assets/p3.jpg",
+       "link": "desert"
     },
      {
       "id": "p10",
       "title": "Drinks",
       "description": "This is product 3",
       "subtitle": "testing subtitle",
-      "img": "/assets/p3.jpg"
+      "img": "/assets/p3.jpg",
+        "link": "drinks"
     }
 
   ],
