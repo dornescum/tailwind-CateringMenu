@@ -1,17 +1,23 @@
-import React from 'react';
+import React, {useState,useContext} from 'react';
 import path from "path";
 import fs from "fs/promises";
+import {ValueContext} from "../../context/ValueContext";
 
 const Index = ({salads}) => {
-	console.log(salads);
+	const {initialValue, setInitialValue} = useContext(ValueContext);
+	const handleCart = () => {
+		setInitialValue(initialValue + 1);
+	};
+	// console.log(initialValue);
 	return (
-		<div>
+		<div className='p-4 my-2'>
 			{salads.map((salad)=>{
 				const {id, title, description, price, img}=salad;
-				return <div key={salad.id}>
+				return <div className='bg-blue-50' key={salad.id}>
 					<p>{title}</p>
 					<p>{description}</p>
 					<p>{price} Euro</p>
+					<button onClick={handleCart} className='bg-slate-300 text-white p-2'>x</button>
 				</div>
 			})}
 		</div>

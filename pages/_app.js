@@ -1,3 +1,4 @@
+import React, {useState} from "react";
 import '../styles/globals.css';
 import Layout from "../components/UI/Layout";
 import TheNavbar from "../components/UI/TheNavbar";
@@ -5,14 +6,23 @@ import TheFooter from "../components/UI/TheFooter";
 import SidebarMenu from "../components/UI/SidebarMenu";
 import NewNavbar from "../components/UI/NewNavbar";
 
+
+import {ValueContext} from "../context/ValueContext";
+
+
 function MyApp({Component, pageProps}) {
-	return <Layout>
-		{/*<TheNavbar/>*/}
-		<NewNavbar />
-		{/*<SidebarMenu />*/}
-		<Component {...pageProps} />
-		<TheFooter />
-	</Layout>;
+
+	const [initialValue, setInitialValue]=useState(0);
+	return <ValueContext.Provider value={{initialValue, setInitialValue}}>
+		<Layout>
+			{/*<TheNavbar/>*/}
+			<NewNavbar />
+			{/*<SidebarMenu />*/}
+			<Component {...pageProps} />
+			<TheFooter />
+		</Layout>
+	</ValueContext.Provider>
+
 
 }
 
