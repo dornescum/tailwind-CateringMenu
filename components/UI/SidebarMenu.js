@@ -1,6 +1,10 @@
 import React from 'react';
 import Link from "next/link";
+import Image from "next/image";
 import { MdClose } from "react-icons/md";
+import Logo from '../../public/assets/svg/food-donation-svgrepo-com.svg';
+
+
 
 
 const menus =[
@@ -22,7 +26,14 @@ const SidebarMenu = (props) => {
 		bg-pink-800 text-pink-100 w-64 top-0 left-0">
 		<div className='bg-blue-300 text-white text-center cursor-pointer' >
 			<ul className='flex justify-between'>
-				<li className='flex pl-2 items-center'>LOGO</li>
+				<li className='flex pl-2 items-center'>
+					<Link href='/'>
+						<a>
+							<Image src={Logo} alt="logo" className='bg-gray-100' width='60' height='20'/>
+						</a>
+					</Link>
+
+				</li>
 				<li onClick={props.onClose} className='p-2 bg-green-700 text-white'>
 					<MdClose />
 				</li>
