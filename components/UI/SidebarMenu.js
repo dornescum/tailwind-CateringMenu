@@ -9,7 +9,7 @@ import Logo from '../../public/assets/svg/food-donation-svgrepo-com.svg';
 
 const menus =[
 	{id:"m1", title:"Home", link:"/"},
-	{id:"m2", title:"Salads", link:"/salads"},
+	{id:"m2", title:"Salads", link:"/products"},
 	{id:"m3", title:"Soups", link:"/soups"},
 	{id:"m4", title:"Pasta", link:"/pasta"},
 	{id:"m5", title:"Burgers", link:"/burgers"},
