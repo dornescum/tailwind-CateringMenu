@@ -9,30 +9,31 @@ import Image from "next/image";
 
 
 const products = [
-	{id: 1, img: `/assets/p1.jpg`, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
-			"\t\tAccusamus assumenda beatae deleniti deserunt eos, esse incidunt molestiae placeat sequi velit.", title: 'product1'},
-	{id: 2, img: `/assets/p2.jpg`, description: "bla bla", title: 'product2'},
-	{id: 3, img: `/assets/p3.jpg`, description: "bla bla", title: 'product3'},
-	{id: 4, img: `/assets/p3.jpg`, description: "bla bla", title: 'product3'},
-	{id: 5, img: `/assets/p3.jpg`, description: "bla bla", title: 'product3'},
-	{id: 6, img: `/assets/Hero.jpg`, description: "bla bla", title: 'product3'},
+	{id: 1, img: `/assets/pasta2.jpg`, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
+			"\t\tAccusamus assumenda beatae deleniti deserunt eos, esse incidunt molestiae placeat sequi velit.",
+		title: 'product 1'},
+	{id: 2, img: `/assets/p2.jpg`, description: "bla bla2", title: 'product 2'},
+	{id: 3, img: `/assets/p3.jpg`, description: "bla bla3", title: 'product 3'},
+	{id: 4, img: `/assets/p1.jpg`, description: "bla bla4", title: 'product 4'},
+	{id: 5, img: `/assets/next-test.jpg`, description: "bla bla5", title: 'product 5'},
+	{id: 6, img: `/assets/Hero.jpg`, description: "bla bla6", title: 'product 6'},
 ];
 
 const FoodTemplate = () => {
 	const time = new Date();
 	const hour = time.getHours();
 	const minutes = time.getMinutes();
-	const {title, description, img} = products[0];
 
 	// todo de scos random un produs
-	const randomP = products.sort();
-	// console.log(randomP );
+	const random = Math.floor(Math.random() * products.length);
+	const {title, description, img} = products[random];
 
-	React.useEffect(() => {
-		// window is accessible here.
-		const innerWidth = window.innerWidth;
-		console.log("window.innerHeight", window.innerWidth);
-	}, []);
+
+	// React.useEffect(() => {
+	// 	// window is accessible here.
+	// 	const innerWidth = window.innerWidth;
+	// 	console.log("window.innerHeight", window.innerWidth);
+	// }, []);
 
 
 	// console.log(innerWidth);
