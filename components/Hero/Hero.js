@@ -18,14 +18,14 @@ const styling = {
 
 const Hero = () => {
 	return (
-		// <div className="bg-fixed object-cover object-center z-10 h-96 block w-full overflow-hidden" style={styling}>
-
-		// <div className=" z-10 h-96 w-full " style={styling}>
-		// </div>
-		<div className=''>
-			{/*fixme error image*/}
+		<div className='relative'>
 			<Image src={hero} className='w-full h-24' width="100%" height="30%" layout="responsive" objectFit="cover"
 				    alt='pasta image plate'/>
+
+			<div className='absolute inset-6 md:inset-10 lg:inset-40'>
+				<h1 className='text-pink-300 text-base md:text-2xl text-4xl'>best food in town</h1>
+				<p className='text-pink-300'>09090909</p>
+			</div>
 		</div>
 	);
 };

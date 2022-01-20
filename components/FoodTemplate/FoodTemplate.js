@@ -12,11 +12,16 @@ const products = [
 	{id: 1, img: `/assets/pasta2.jpg`, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
 			"\t\tAccusamus assumenda beatae deleniti deserunt eos, esse incidunt molestiae placeat sequi velit.",
 		title: 'product 1'},
-	{id: 2, img: `/assets/p2.jpg`, description: "bla bla2", title: 'product 2'},
-	{id: 3, img: `/assets/p3.jpg`, description: "bla bla3", title: 'product 3'},
-	{id: 4, img: `/assets/p1.jpg`, description: "bla bla4", title: 'product 4'},
-	{id: 5, img: `/assets/next-test.jpg`, description: "bla bla5", title: 'product 5'},
-	{id: 6, img: `/assets/Hero.jpg`, description: "bla bla6", title: 'product 6'},
+	{id: 2, img: `/assets/p2.jpg`,  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
+			"\t\tAccusamus assumenda beatae deleniti deserunt eos, esse incidunt molestiae placeat sequi velit.", title: 'product 2'},
+	{id: 3, img: `/assets/p3.jpg`,  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
+			"\t\tAccusamus assumenda beatae deleniti deserunt eos, esse incidunt molestiae placeat sequi velit.", title: 'product 3'},
+	{id: 4, img: `/assets/p1.jpg`,  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
+			"\t\tAccusamus assumenda beatae deleniti deserunt eos, esse incidunt molestiae placeat sequi velit.", title: 'product 4'},
+	{id: 5, img: `/assets/next-test.jpg`,  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
+			"\t\tAccusamus assumenda beatae deleniti deserunt eos, esse incidunt molestiae placeat sequi velit.", title: 'product 5'},
+	{id: 6, img: `/assets/Hero.jpg`,  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
+			"\t\tAccusamus assumenda beatae deleniti deserunt eos, esse incidunt molestiae placeat sequi velit.", title: 'product 6'},
 ];
 
 const FoodTemplate = () => {
@@ -51,9 +56,17 @@ const FoodTemplate = () => {
 					<ul className='flex flex-col text-center mx-auto py-10'>
 						<li className='pb-2'>{title}</li>
 						<li className=''>{description}</li>
+						<li>
+							{/*todo pus icon button*/}
+							<div className='flex justify-end'>
+								add to cart
+							</div>
+						</li>
 					</ul>
 
 				</div>
+
+
 			</div>
 		</div>
 	);
