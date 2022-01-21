@@ -11,6 +11,7 @@ import { MdOutlineAddShoppingCart } from "react-icons/md";
 
 
 const Index = ({salads}) => {
+	console.log(salads);
 	const {initialValue, setInitialValue} = useContext(ValueContext);
 	const handleCart = () => {
 		setInitialValue(initialValue + 1);
@@ -18,11 +19,13 @@ const Index = ({salads}) => {
 
 	return (
 		<div className="flex flex-col md:flex-row flex-wrap bg-white gap-2 md:gap-0">
+			{!salads && <p>no salads</p>}
+
 			{salads.map((salad) => {
 				const {id, title, description, price, img} = salad;
 				return <div className="basis-1/2 md:basis1/3 lg:basis-1/4" key={id}>
-					{/*<Link href={`${server}/${id}`}>*/}
-					<Link href={'/'}>
+					<Link href={`/salads/${id}`}>
+					{/*<Link href={'/'}>*/}
 						<a>
 							<div className="bg-slate-100 m-2 flex flex-col">
 								<p>{title}</p>
@@ -35,11 +38,6 @@ const Index = ({salads}) => {
 							</div>
 						</a>
 					</Link>
-
-
-
-
-
 					{/*<p>{title}</p>*/}
 					{/*<p>{description}</p>*/}
 					{/*<p>{price} Euro</p>*/}
@@ -50,6 +48,30 @@ const Index = ({salads}) => {
 	);
 };
 
+// export const getStaticProps = async (context) => {
+	// const id = context.params.id;
+	// console.log(context);
+	// // const res = await fetch(`${server}/api/products/${id}`);
+	// const products = await res.json();
+	// return {
+	// 	props: {
+	// 		products,
+	// 	},
+	// };
+// };
+
+// export const getStaticPaths = async () => {
+// 	const res = await fetch(`${server}/data/products.json`);
+// 	const products = await res.json();
+// 	console.log(typeof products);
+// 	const ids = products.data.map((product) => product.id);
+// 	const paths = ids.map((id) => ({params: {id: id.toString()}}));
+// 	return {
+// 		paths,
+// 		fallback: false,
+// 	};
+// };
+
 
 export async function getStaticProps() {
 	const filePath = path.join(process.cwd(), 'data', 'products.json');
@@ -58,7 +80,6 @@ export async function getStaticProps() {
 	// console.log(jsonData);
 	const data = JSON.parse(jsonData);
 	// console.log(data);
-
 	return {
 		props: {
 			// products:[{id: 'p1', title: 'product 1'}]

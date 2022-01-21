@@ -162,5 +162,33 @@
       "img": "/assets/p3.jpg",
       "price": 9.99
     }
+  ],
+  "beef": [
+    {
+      "id": "beef-1",
+      "title": "Beef 1",
+      "description": "This is product 31",
+      "subtitle": "testing salads",
+      "img": "/assets/p3.jpg",
+      "price": 9.99
+    }
+  ],
+  "burgers": [
+    {
+      "id": "beef-1",
+      "title": "Beef 1",
+      "description": "This is product 31",
+      "subtitle": "testing salads",
+      "img": "/assets/p3.jpg",
+      "price": 91.99
+    },
+    {
+      "id": "beef-2",
+      "title": "Beef 2",
+      "description": "This is product 31",
+      "subtitle": "testing salads",
+      "img": "/assets/p3.jpg",
+      "price": 19.99
+    }
   ]
 }
