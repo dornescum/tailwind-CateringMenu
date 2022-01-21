@@ -8,7 +8,7 @@ import {ValueContext} from "../../context/ValueContext";
 const TheFooter = () => {
 
 	const {initialValue, setInitialValue} = useContext(ValueContext);
-	console.log(initialValue);
+	// console.log(initialValue);
 
 	return (
 		// todo reparat position footer

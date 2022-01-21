@@ -1,44 +1,27 @@
-import React from 'react';
-import {server} from "../../config";
+import React, {useEffect, useState} from 'react';
 
-const BurgersId = ({products}) => {
-	console.log(products);
-	const {id, title, description, img, price}=products;
+const BurgersId = ({article}) => {
+	// console.log(article);
+	// const [data, setData] = useState([article]);
 
 	return (
 		<div>
-				<ul>
-					<li>{id}</li>
-					<li>{title}</li>
-					<li>{description}</li>
-					<li>{price}</li>
-				</ul>
+			{!article && <p>no articles</p>}
+			{article && <div>{article.title}</div>}
+
 		</div>
 	);
 };
+export async function getServerSideProps(context) {
+	const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.id} `);
+	const article = await res.json();
 
-export const getStaticProps = async (context) => {
-	const id = context.params.id;
-	const res = await fetch(`${server}/api/products/${id}`);
-	const products = await res.json();
 	return {
 		props: {
-			products,
-		},
-	};
-};
+			article
+		}, // will be passed to the page component as props
+	}
+}
 
-export const getStaticPaths = async () => {
-	const res = await fetch(`${server}/api/products`);
-	// console.log(res);
-	const products = await res.json();
-	// console.log(products);
-	const ids = products.data.salads.map((product) => product.id);
-	const paths = ids.map((id) => ({params: {id: id}}));
-	return {
-		paths,
-		fallback: false,
-	};
-};
 
 export default BurgersId;

@@ -1,40 +1,48 @@
 import React from 'react';
 import Link from "next/link";
-import Image from "next/image";
 
-import path from "path";
-import fs from "fs";
-
-const Index = ({burgers}) => {
-	console.log(burgers);
+const Index = ({articles}) => {
+	console.log(articles);
 	return (
 		<div>
-			<ul>
-				{burgers.map((item)=>{
-					// const {}=burgers;
-					return<Link href={`/burgers/${item.id}`} key={item.id}>
-						<a>
-							<li>{item.title}</li>
-						</a>
-					</Link>
+			{!articles && <p>no articles</p>}
+			{articles && <div>
+				<ul>
+					{articles.map((item)=>{
+						return <Link href={`/burgers/${item.id}`} key={item.id}>
+							<a>
+								<li >{item.title}</li>
+							</a>
+						</Link>
+					})}
 
-				})}
-			</ul>
+				</ul>
+			</div>}
 		</div>
 	);
 };
 
-export async function getStaticProps() {
-	const filePath = path.join(process.cwd(), 'data', 'products.json');
-	const jsonData = await fs.readFileSync(filePath);
-	const data = JSON.parse(jsonData);
+export default Index;
+export const getStaticProps = async () => {
+	const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`)
+	const articles = await res.json()
 
 	return {
 		props: {
-			burgers: data.burgers
+			articles,
 		},
-		revalidate: 10
-	};
+	}
 }
 
-export default Index;
+// export async function getStaticProps() {
+// 	let url = `https://api.spoonacular.com/recipes/search?${process.env.API_KEY}`;
+// 	const res = await fetch(url);
+// 	const obj = await res.json();
+// 	// console.log(obj);
+// 	return {
+// 		props: {
+// 			burgers: obj.results
+//
+// 		}
+// 	}
+// }
