@@ -4,7 +4,7 @@ import data from '../../../data/products.json'
 
 export default function handler({ query: { id } }, res) {
 	// console.log(data);
-	const filtered = data.salads.filter((item) => item.id === id)
+	const filtered = data.products.filter((item) => item.id === id)
 	if (filtered.length > 0) {
 		res.status(200).json(filtered[0])
 	} else {
