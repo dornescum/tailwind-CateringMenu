@@ -21,6 +21,7 @@ export default Index;
 	};
 };
 
+
 export const getStaticPaths = async () => {
 	const res = await fetch(`${server}/data/products.json`);
 	const products = await res.json();
