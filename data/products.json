@@ -27,7 +27,7 @@
     {
       "id": "p4",
       "title": "Burgers",
-      "description": "This is product 3",
+      "description": "quality beef, fresh ingredients",
       "subtitle": "testing subtitle",
       "img": "/assets/burger.jpg",
       "link": "burgers"
@@ -35,7 +35,7 @@
     {
       "id": "p5",
       "title": "Chicken",
-      "description": "This is product 3",
+      "description": "natural feed",
       "subtitle": "testing subtitle",
       "img": "/assets/chicken.jpg",
       "link": "chicken"
@@ -43,7 +43,7 @@
     {
       "id": "p6",
       "title": "Pork",
-      "description": "This is product 3",
+      "description": "organic meat",
       "subtitle": "testing subtitle",
       "img": "/assets/pork.jpg",
       "link": "pork"
@@ -51,15 +51,15 @@
     {
       "id": "p7",
       "title": "Beef",
-      "description": "This is product 3",
+      "description": "gras feed ",
       "subtitle": "testing subtitle",
       "img": "/assets/beef.jpg",
       "link": "beef"
     },
     {
       "id": "p8",
-      "title": "Recomandation",
-      "description": "This is product 3",
+      "title": "Recommendation",
+      "description": "fresh, delicious",
       "subtitle": "testing subtitle",
       "img": "/assets/recommendation.jpg",
       "link": "recommendations"
@@ -67,7 +67,7 @@
     {
       "id": "p9",
       "title": "Deserts",
-      "description": "This is product 3",
+      "description": "sugar, cream, butter",
       "subtitle": "testing subtitle",
       "img": "/assets/dessert.jpg",
       "link": "desert"
@@ -75,7 +75,7 @@
     {
       "id": "p10",
       "title": "Drinks",
-      "description": "This is product 3",
+      "description": "premium drinks",
       "subtitle": "testing subtitle",
       "img": "/assets/drinks.jpg",
       "link": "drinks"

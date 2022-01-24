@@ -8,10 +8,10 @@ import ExpensiveLabel from "../../components/UI/ExpensiveLabel";
 
 
 const BurgersId = ({beefId}) => {
-	const {initialValue, setInitialValue} = useContext(ValueContext);
-	const handleCart = () => {
-		setInitialValue(initialValue + 1);
-	};
+	const {initialValue, setInitialValue, handleCart} = useContext(ValueContext);
+	// const handleCart = () => {
+	// 	setInitialValue(initialValue + 1);
+	// };
 
 	const [data, setData] = useState([]);
 

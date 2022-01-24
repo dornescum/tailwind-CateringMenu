@@ -7,34 +7,35 @@ import Link from "next/link";
 import ChevronRight from "../../assets-next/icons/ChevronRight";
 
 
-
 const NewNavbar = () => {
-	const [showSidebar, setShowSidebar]=useState(false);
+	const [showSidebar, setShowSidebar] = useState(false);
 
 	return (
-		<div className='relative'>
-			<div className='flex justify-between py-2'>
-				<Link href='/'>
+		<div className="relative">
+			<div className="flex justify-between py-2">
+				<Link href="/">
 					<a>
 						{/*<Image src={Logo} alt="logo" className='bg-gray-100' width='60' height='20'/>*/}
-						<div className='flex items-center pl-4'  onClick={()=>setShowSidebar(!showSidebar)}>
-							<ChevronRight />
-							<h1 className='text-2xl w-36 pl-4'>Menu</h1>
+						<div className="flex items-center pl-4" onClick={() => setShowSidebar(!showSidebar)}>
+							<ChevronRight/>
+							<h1 className="text-2xl w-36 pl-4">Menu</h1>
 						</div>
 					</a>
 				</Link>
 				{showSidebar ?
-					<button onClick={()=>setShowSidebar(!showSidebar)} className='p-2 bg-slate-100 rounded-md transition ease-out'>
-						<MdClose />
+					<button onClick={() => setShowSidebar(!showSidebar)}
+							className="p-2 bg-slate-100 rounded-md transition ease-out bg-pink-300 text-white">
+						<MdClose/>
 					</button>
 					:
-				<button onClick={()=>setShowSidebar(!showSidebar)} className='p-2 bg-slate-100 rounded-md transition ease-out'>
-					<MdFormatAlignRight />
-				</button>
+					<button onClick={() => setShowSidebar(!showSidebar)}
+							className="p-2 bg-slate-100 rounded-md transition ease-out bg-pink-300 text-white">
+						<MdFormatAlignRight/>
+					</button>
 				}
 			</div>
 
-			{showSidebar && <SidebarMenu onClose={()=>setShowSidebar(!showSidebar)}/>}
+			{showSidebar && <SidebarMenu onClose={() => setShowSidebar(!showSidebar)}/>}
 		</div>
 	);
 };
