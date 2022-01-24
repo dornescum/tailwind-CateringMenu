@@ -10,10 +10,20 @@ const Categories = ({title, description, img, link}) => {
 			 transition duration-300 rounded-md my-4 mx-4 hover:shadow-md">
 			<Link href={"/" + link}>
 				<a className='flex'>
-					<Image src={img} alt="food" className="h-6 w-6 rounded-md" width="24" height="24"/>
-					<ul className="flex">
+					<Image src={img} alt="food" className="h-6 w-6 rounded-md" width="96" height="96"/>
+					<div className=''>
+
+
+						{/*<div className=''>*/}
+						{/*	<p  className={`pl-12 hover:italic */}
+						{/*	${title === 'Beef' ? "capitalize underline italic":""}`}>*/}
+						{/*	{title}</p>*/}
+						{/*</div>*/}
+
+					</div>
+					<ul className="flex flex-col items-center justify-center">
 						<li className="px-2 ml-8">{title}</li>
-						{/*<li className="px-2">{description}</li>*/}
+						<li className="px-2">{description}</li>
 					</ul>
 				</a>
 			</Link>

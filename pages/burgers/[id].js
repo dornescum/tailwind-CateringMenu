@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import Image from "next/image";
 
 const BurgersId = ({article}) => {
 	// console.log(article);
@@ -7,7 +8,11 @@ const BurgersId = ({article}) => {
 	return (
 		<div>
 			{!article && <p>no articles</p>}
-			{article && <div>{article.title}</div>}
+			{article && <div>
+				{article.title}
+				<Image src={`/assets/burger.jpg`} alt={article?.title}
+					   className="rounded-md w-24 h-24" width="880" height="640"/>
+			</div>}
 
 		</div>
 	);

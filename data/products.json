@@ -3,25 +3,25 @@
     {
       "id": "p1",
       "title": "Salads",
-      "description": "This is product 1",
+      "description": "salad, fresh vegetables, olive oil",
       "subtitle": "testing subtitle",
-      "img": "/assets/p1.jpg",
+      "img": "/assets/salata.jpg",
       "link": "salads"
     },
     {
       "id": "p2",
       "title": "Soups",
-      "description": "This is product 2",
+      "description": "fresh ingredients",
       "subtitle": "testing subtitle",
-      "img": "/assets/p2.jpg",
+      "img": "/assets/soup.jpg",
       "link": "soups"
     },
     {
       "id": "p3",
       "title": "Pasta",
-      "description": "This is product 3",
+      "description": "parmezan, garlic, olive oil",
       "subtitle": "testing subtitle",
-      "img": "/assets/p3.jpg",
+      "img": "/assets/pastaAmatriciana.jpg",
       "link": "pasta"
     },
     {
@@ -29,7 +29,7 @@
       "title": "Burgers",
       "description": "This is product 3",
       "subtitle": "testing subtitle",
-      "img": "/assets/p3.jpg",
+      "img": "/assets/burger.jpg",
       "link": "burgers"
     },
     {
@@ -37,7 +37,7 @@
       "title": "Chicken",
       "description": "This is product 3",
       "subtitle": "testing subtitle",
-      "img": "/assets/p3.jpg",
+      "img": "/assets/chicken.jpg",
       "link": "chicken"
     },
     {
@@ -45,7 +45,7 @@
       "title": "Pork",
       "description": "This is product 3",
       "subtitle": "testing subtitle",
-      "img": "/assets/p3.jpg",
+      "img": "/assets/pork.jpg",
       "link": "pork"
     },
     {
@@ -53,7 +53,7 @@
       "title": "Beef",
       "description": "This is product 3",
       "subtitle": "testing subtitle",
-      "img": "/assets/p3.jpg",
+      "img": "/assets/beef.jpg",
       "link": "beef"
     },
     {
@@ -61,7 +61,7 @@
       "title": "Recomandation",
       "description": "This is product 3",
       "subtitle": "testing subtitle",
-      "img": "/assets/p3.jpg",
+      "img": "/assets/recommendation.jpg",
       "link": "recommendations"
     },
     {
@@ -69,7 +69,7 @@
       "title": "Deserts",
       "description": "This is product 3",
       "subtitle": "testing subtitle",
-      "img": "/assets/p3.jpg",
+      "img": "/assets/dessert.jpg",
       "link": "desert"
     },
     {
@@ -77,24 +77,8 @@
       "title": "Drinks",
       "description": "This is product 3",
       "subtitle": "testing subtitle",
-      "img": "/assets/p3.jpg",
+      "img": "/assets/drinks.jpg",
       "link": "drinks"
-    },
-    {
-      "id": "pasta-1",
-      "title": "pasta 1",
-      "description": "This is a pasta",
-      "subtitle": "testing subtitle",
-      "img": "/assets/p3.jpg",
-      "link": "pasta"
-    },
-    {
-      "id": "pasta-2",
-      "title": "pasta 2",
-      "description": "This is a pasta ",
-      "subtitle": "testing subtitle",
-      "img": "/assets/p3.jpg",
-      "link": "pasta"
     }
   ],
   "salads": [

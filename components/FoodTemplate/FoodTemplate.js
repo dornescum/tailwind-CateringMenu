@@ -33,18 +33,8 @@ const FoodTemplate = () => {
 	const random = Math.floor(Math.random() * products.length);
 	const {title, description, img} = products[random];
 
-
-	// React.useEffect(() => {
-	// 	// window is accessible here.
-	// 	const innerWidth = window.innerWidth;
-	// 	console.log("window.innerHeight", window.innerWidth);
-	// }, []);
-
-
-	// console.log(innerWidth);
-
 	return (
-		<div className="bg-color-[#f4f4f4]">
+		<div className="bg-gray-50">
 			<SearchBox/>
 			<div className="text-center mx-auto px-4 py-4 my-4">
 				<h4>Special of the day</h4>
@@ -52,7 +42,6 @@ const FoodTemplate = () => {
 					<div className='p-4'>
 						<Image src={img} alt="food" className="rounded-md w-24 h-24" width='300' height='200'/>
 					</div>
-
 					<ul className='flex flex-col text-center mx-auto py-10'>
 						<li className='pb-2'>{title}</li>
 						<li className=''>{description}</li>
@@ -63,10 +52,7 @@ const FoodTemplate = () => {
 							</div>
 						</li>
 					</ul>
-
 				</div>
-
-
 			</div>
 		</div>
 	);

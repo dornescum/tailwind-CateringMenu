@@ -1,8 +1,9 @@
 import React from 'react';
 import Link from "next/link";
 import Image from "next/image";
-import { MdClose } from "react-icons/md";
+import { MdChevronRight } from "react-icons/md";
 import Logo from '../../public/assets/svg/food-donation-svgrepo-com.svg';
+import ChevronRight from "../../assets-next/icons/ChevronRight";
 
 
 
@@ -22,29 +23,26 @@ const menus =[
 ];
 
 const SidebarMenu = (props) => {
-	return (<aside className="absolute min-h-screen h-full z-10 transition-all
-		bg-pink-800 text-pink-100 w-64 top-0 left-0">
-		<div className='bg-blue-300 text-white text-center cursor-pointer' >
-			<ul className='flex justify-between'>
-				<li className='flex pl-2 items-center'>
-					<Link href='/'>
-						<a>
-							<Image src={Logo} alt="logo" className='bg-gray-100' width='60' height='20'/>
-						</a>
-					</Link>
-
-				</li>
-				<li onClick={props.onClose} className='p-2 bg-green-700 text-white'>
-					<MdClose />
-				</li>
-			</ul>
+	return (<aside className="absolute min-h-screen h-full z-50 transition-all
+		bg-gray-200 text-gray-600 w-64 top-0 left-0 opacity-100">
+		<div className='text-center cursor-pointer' >
+			<Link href='/'>
+				<a>
+					<div className='flex items-center py-2 pr-8 bg-gray-200 justify-between' >
+						<h1 className='text-2xl w-36 text-gray-600'>Menu</h1>
+						<div className='bg-pink-300 text-white rounded h-6 w-6 items-center flex justify-center' onClick={props.onClose}>
+							<MdChevronRight />
+						</div>
+					</div>
+				</a>
+			</Link>
 		</div>
 			<nav>
-				<div className="flex flex-col py-4 px-4">
+				<div className="flex flex-col py-4">
 					{menus.map((link)=>{
-						return <div className="pl-4 py-2 mb-0 mt-1 hover:bg-red-900 text-center" key={link.id}>
+						return <div className="py-2 mb-0 mt-1 hover:bg-pink-300" key={link.id}>
 							<Link href={link.link}>
-								<a>{link.title} </a>
+								<a className='flex justify-end pr-8'>{link.title} </a>
 							</Link>
 						</div>
 					})}

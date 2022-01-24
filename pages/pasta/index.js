@@ -5,7 +5,7 @@ import Link from "next/link";
 
 
 const Index = ({pasta}) => {
-	// console.log(pasta);
+	console.log(pasta);
 	const pastaDish = pasta.filter((p)=> p.link === 'pasta');
 	// console.log(pastaDish);
 	return (

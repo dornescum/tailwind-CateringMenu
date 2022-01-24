@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import SidebarMenu from "./SidebarMenu";
-import { MdFormatAlignRight } from "react-icons/md";
+import {MdClose, MdFormatAlignRight} from "react-icons/md";
 import Logo from '../../public/assets/svg/food-donation-svgrepo-com.svg';
 import Image from "next/image";
 import Link from "next/link";
+import ChevronRight from "../../assets-next/icons/ChevronRight";
 
 
 
@@ -15,13 +16,22 @@ const NewNavbar = () => {
 			<div className='flex justify-between py-2'>
 				<Link href='/'>
 					<a>
-						<Image src={Logo} alt="logo" className='bg-gray-100' width='60' height='20'/>
+						{/*<Image src={Logo} alt="logo" className='bg-gray-100' width='60' height='20'/>*/}
+						<div className='flex items-center pl-4'  onClick={()=>setShowSidebar(!showSidebar)}>
+							<ChevronRight />
+							<h1 className='text-2xl w-36 pl-4'>Menu</h1>
+						</div>
 					</a>
 				</Link>
-				{/*<Image src={Logo} alt="logo" className='bg-gray-100' width='60' height='20'/>*/}
-				<button onClick={()=>setShowSidebar(!showSidebar)} className='p-2 bg-slate-100 rounded-md'>
+				{showSidebar ?
+					<button onClick={()=>setShowSidebar(!showSidebar)} className='p-2 bg-slate-100 rounded-md transition ease-out'>
+						<MdClose />
+					</button>
+					:
+				<button onClick={()=>setShowSidebar(!showSidebar)} className='p-2 bg-slate-100 rounded-md transition ease-out'>
 					<MdFormatAlignRight />
 				</button>
+				}
 			</div>
 
 			{showSidebar && <SidebarMenu onClose={()=>setShowSidebar(!showSidebar)}/>}

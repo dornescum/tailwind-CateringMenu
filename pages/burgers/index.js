@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from "next/link";
+import Image from "next/image";
 
 const Index = ({articles}) => {
-	console.log(articles);
 	return (
 		<div>
 			{!articles && <p>no articles</p>}
@@ -12,6 +12,8 @@ const Index = ({articles}) => {
 						return <Link href={`/burgers/${item.id}`} key={item.id}>
 							<a>
 								<li >{item.title}</li>
+								<Image src={`/assets/burger.jpg`} alt={item?.title}
+									   className="rounded-md w-24 h-24" width="880" height="640"/>
 							</a>
 						</Link>
 					})}
@@ -33,16 +35,3 @@ export const getStaticProps = async () => {
 		},
 	}
 }
-
-// export async function getStaticProps() {
-// 	let url = `https://api.spoonacular.com/recipes/search?${process.env.API_KEY}`;
-// 	const res = await fetch(url);
-// 	const obj = await res.json();
-// 	// console.log(obj);
-// 	return {
-// 		props: {
-// 			burgers: obj.results
-//
-// 		}
-// 	}
-// }

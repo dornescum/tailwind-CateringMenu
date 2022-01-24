@@ -6,10 +6,10 @@ import { MdSearch, MdOutlineKeyboardArrowDown } from "react-icons/md";
 const SearchBox = () => {
 	return (
 		<div className='px-4'>
-			<div className='flex items-center w-full'>
-				<ChevronRight />
-				<h1 className='text-2xl w-36 pl-4'>Menu</h1>
-			</div>
+			{/*<div className='flex items-center w-full'>*/}
+			{/*	<ChevronRight />*/}
+			{/*	<h1 className='text-2xl w-36 pl-4'>Menu</h1>*/}
+			{/*</div>*/}
 			<div className='pt-8'>
 				<div className='bg-slate-50 flex py-4 rounded-md px-4 md:items-center  md:w-96 md:mx-auto'>
 					<input type="text" placeholder='Search' className='bg-slate-50 w-64 md:w-full'/>
