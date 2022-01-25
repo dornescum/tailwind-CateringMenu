@@ -67,7 +67,6 @@ export default DrinksId;
 export async function getServerSideProps(context) {
 	const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.id} `);
 	const itemId = await res.json();
-	console.log(itemId);
 
 	return {
 		props: {

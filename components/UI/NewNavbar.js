@@ -14,11 +14,11 @@ const NewNavbar = () => {
 
 	return (
 		<div className="relative">
-			<div className="flex justify-between py-2">
+			<div className="flex justify-between py-2 z-10">
 				{/*<Link href="/">*/}
 				{/*	<a>*/}
 						{/*<Image src={Logo} alt="logo" className='bg-gray-100' width='60' height='20'/>*/}
-						<div className="flex items-center pl-4" onClick={() => setShowSidebar(!showSidebar)}>
+						<div className="flex items-center pl-4 cursor-pointer" onClick={() => setShowSidebar(!showSidebar)}>
 							<div className='bg-primary text-white h-8 w-8 rounded-md flex items-center justify-center'>
 								<MdChevronLeft />
 							</div>
