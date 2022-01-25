@@ -8,10 +8,7 @@ import ExpensiveLabel from "../../components/UI/ExpensiveLabel";
 
 
 const BurgersId = ({beefId}) => {
-	const {initialValue, setInitialValue, handleCart} = useContext(ValueContext);
-	// const handleCart = () => {
-	// 	setInitialValue(initialValue + 1);
-	// };
+	const {handleCart} = useContext(ValueContext);
 
 	const [data, setData] = useState([]);
 
@@ -45,8 +42,8 @@ const BurgersId = ({beefId}) => {
 						</div>
 					</div>
 					<Image src={`/assets/Hero.jpg`} alt={beefId?.title} className="rounded-md w-24 h-24 cursor-wait"
-						   width="880"
-						   height="640"/>
+						   width="800"
+						   height="600"/>
 				</div>}
 
 			<ul className="flex flex-col md:flex-row flex-wrap">

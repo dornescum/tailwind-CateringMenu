@@ -17,7 +17,7 @@ const SearchBox = () => {
 						<MdSearch />
 					</button>
 					<div className='flex flex-1 items-center justify-end'>
-						<div className='bg-pink-300 text-white p-2 rounded-md'>
+						<div className='bg-primary text-white p-2 rounded-md'>
 							<MdOutlineKeyboardArrowDown />
 						</div>
 					</div>

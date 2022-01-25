@@ -13,7 +13,7 @@ const ArticleId = ({title, body, img, id}) => {
 	return (
 		<div className="flex flex-col md:flex-row justify-around bg-slate-100 mx-4 justify-center items-center
 		rounded-md shadow-md" data-testid={title.slice(0,2)}>
-			<div className="text-justify m-4 p-2" data-testid={parseInt(id) * 1000}>
+			<div className="text-justify m-4 p-2" data-testid={title.slice(2,4)}>
 				<p className="mx-0 my-2 md:my-4 md:mx-2 font-bold text-4xl capitalize text-center">
 					{title.slice(0, 10)}
 				</p>
@@ -28,8 +28,8 @@ const ArticleId = ({title, body, img, id}) => {
 				</div>
 			</div>
 			<Image src={img} alt={title} className="rounded-md w-24 h-24 cursor-wait"
-				   width="900"
-				   height="700"/>
+				   width="800"
+				   height="700" data-testid={id}/>
 		</div>
 	);
 };

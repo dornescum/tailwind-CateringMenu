@@ -11,7 +11,7 @@ const IndividualPageProduct = ({ title, body, img}) => {
 										<h3 className="mb-3 text-2xl flex justify-center items-center">{title.slice(0, 10)}</h3>
 										<p className='text-justify'>{body}</p>
 									</div>
-									<div className='py-2 md:py-6 px-1 mb-1 flex flex-col lg:flex-row justify-between'>
+									<div className='py-2 md:py-6 px-1 my-2 mt-6 flex flex-col lg:flex-row justify-between'>
 										<p className='font-bold'>More info here ...</p>
 										<p className='font-bold'>Price {prices} </p>
 									</div>
@@ -20,7 +20,7 @@ const IndividualPageProduct = ({ title, body, img}) => {
 											buy it!
 										</p>
 										<Image src={img} alt={title}
-											   className="rounded-md w-24 h-24" width="880" height="640"/>
+											   className="rounded-md w-24 h-24" width="880" height="680"/>
 									</div>
 								</div>
 	);

@@ -95,8 +95,6 @@ const FoodTemplate = () => {
 							</li>
 						</ul>
 					</div>
-
-
 				</div>
 			</div>
 		</div>
