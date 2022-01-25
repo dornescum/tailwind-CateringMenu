@@ -27,7 +27,7 @@ const products = [
 	},
 	{
 		id: 3,
-		img: `/assets/Beef.jpg`,
+		img: `/assets/beef.jpg`,
 		description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
 			"\t\tAccusamus assumenda beatae deleniti deserunt eos, esse incidunt molestiae placeat sequi velit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
 			"\t\tAccusamus assumenda beatae deleniti deserunt eos, esse incidunt molestiae placeat sequi velit.",
@@ -69,7 +69,7 @@ const FoodTemplate = () => {
 
 	// todo de scos random un produs
 	const random = Math.floor(Math.random() * products.length);
-	const {title, description, img} = products[random];
+	const {title, description, img, id} = products[random];
 
 	return (
 		<div className="bg-gray-50 mx-2">
@@ -79,18 +79,18 @@ const FoodTemplate = () => {
 
 			<div className="text-center mx-auto my-2 px-4 py-4 my-4 rounded-md">
 				<h4 className="font-bold mb-4 text-2xl md:text-4xl">Special of the day</h4>
-				<div className="flex flex-col md:flex-row bg-slate-50 mx-auto">
+				<div className="flex flex-col md:flex-row bg-slate-50 mx-auto" data-cy={title}>
 					<div className="p-4 basis-1/2 flex justify-center items-center ">
 						<Image src={img} alt="food" className="rounded-md w-24 h-24" width="600" height="450"/>
 					</div>
 					<div className='basis-1/2 flex justify-center items-center'>
 						<ul className="flex flex-col text-center mx-auto py-10">
 							<li className={`pb-2 text-2xl mb-2 lg:pb-12 ${title === "Pasta" ? "text-pink-300" : ""}`}>{title}</li>
-							<li className="">{description}</li>
-							<li className="mt-8 md:4">
+							<li className="" data-testid={title.slice(0,3)}>{description}</li>
+							<li className="mt-8 md:4" data-testid={(id * Math.random())*1000}>
 								{/*todo pus icon button*/}
-								<div className="flex justify-end">
-									<Button onClick={handleCart}>Add to cart</Button>
+								<div className="flex justify-end" data-testid={title.slice(3,6)}>
+									<Button onClick={handleCart} data-testid={id}>Add to cart</Button>
 								</div>
 							</li>
 						</ul>
