@@ -37,7 +37,7 @@ const SidebarMenu = (props) => {
 		<nav>
 			<div className="flex flex-col py-4">
 				{menus.map((link) => {
-					return <div className="py-2 mb-0 mt-1 hover:bg-pink-300" key={link.id} data-testid={link.id}>
+					return <div className="py-2 mb-0 mt-1 hover:bg-primary" key={link.id} data-testid={link.id}>
 						<Link href={link.link}>
 							<a className="flex justify-end pr-8" onClick={props.onClose} data-testid={link.title}>{link.title} </a>
 						</Link>

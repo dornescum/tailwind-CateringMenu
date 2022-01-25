@@ -62,12 +62,6 @@ const products = [
 const FoodTemplate = () => {
 	const {initialValue, setInitialValue, handleCart} = useContext(ValueContext);
 
-
-	const time = new Date();
-	const hour = time.getHours();
-	const minutes = time.getMinutes();
-
-	// todo de scos random un produs
 	const random = Math.floor(Math.random() * products.length);
 	const {title, description, img, id} = products[random];
 
