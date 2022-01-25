@@ -17,7 +17,6 @@ const Index = ({articles}) => {
 							</a>
 						</Link>
 					})}
-
 				</ul>
 			</div>}
 		</div>
