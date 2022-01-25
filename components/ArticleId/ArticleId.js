@@ -27,7 +27,7 @@ const ArticleId = ({title, body, img, id}) => {
 						cart</Button>
 				</div>
 			</div>
-			<Image src={img} alt={title} className="rounded-md w-24 h-24 cursor-wait"
+			<Image src={img} alt={title} className="rounded-md w-24 h-24 cursor-wait object-cover"
 				   width="800"
 				   height="700" data-testid={id}/>
 		</div>

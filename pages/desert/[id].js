@@ -7,23 +7,23 @@ import Link from "next/link";
 const images = [
 	{
 		id: 1,
-		title: 'pasta 1',
-		link: 'https://images.unsplash.com/photo-1574969903809-3f7a1668ceb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGFzdGElMjBjYXJib25hcmF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
+		title: 'dessert 1',
+		link: 'https://images.pexels.com/photos/3026810/pexels-photo-3026810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
 	},
 	{
 		id: 2,
-		title: 'pasta 2',
-		link: 'https://images.unsplash.com/photo-1574969903809-3f7a1668ceb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGFzdGElMjBjYXJib25hcmF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
+		title: 'dessert 2',
+		link: 'https://images.pexels.com/photos/3026807/pexels-photo-3026807.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
 	},
 	{
 		id: 3,
-		title: 'pasta 3',
-		link: 'https://images.unsplash.com/photo-1574926053821-79c5e338a933?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cGFzdGElMjBjYXJib25hcmF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
+		title: 'dessert 3',
+		link: 'https://images.pexels.com/photos/5634003/pexels-photo-5634003.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
 	},
 ];
 
-const SoupId = ({itemId}) => {
-	const pastaImageId = 'https://images.unsplash.com/photo-1588013273468-315fd88ea34c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGFzdGElMjBjYXJib25hcmF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60';
+const DessertId = ({itemId}) => {
+	const dessertImageId = 'https://images.pexels.com/photos/3026804/pexels-photo-3026804.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500';
 	const [data, setData] = useState([]);
 
 	useEffect(() => {
@@ -42,7 +42,7 @@ const SoupId = ({itemId}) => {
 		<div>
 			{!itemId && <p>no items</p>}
 			{itemId && <ArticleId title={itemId?.title} body={itemId?.body}
-								  img={pastaImageId}
+								  img={dessertImageId}
 			/>}
 			<ul className="flex flex-col md:flex-row flex-wrap">
 				{data.map((item) => {
@@ -62,7 +62,7 @@ const SoupId = ({itemId}) => {
 	);
 };
 
-export default SoupId;
+export default DessertId;
 
 export async function getServerSideProps(context) {
 	const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.id} `);

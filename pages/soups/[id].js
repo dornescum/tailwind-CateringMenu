@@ -77,7 +77,7 @@ const SoupId = ({itemId}) => {
 			/>}
 			<ul className="flex flex-col md:flex-row flex-wrap">
 				{data.map((item) => {
-					return <Link href={`/beef/${item.id}`} key={item.id}>
+					return <Link href={`/soups/${item.id}`} key={item.id}>
 						<a className="basis-1/2 md:basis-1/3">
 							<li className="p-2 m-4">
 								<div className="p-1  bg-slate-100 rounded-md shadow-md">

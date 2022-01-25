@@ -20,7 +20,7 @@ const IndividualPageProduct = ({title, body, img}) => {
 					buy it!
 				</p>
 				<Image src={img} alt={title}
-					   className="rounded-md w-24 h-24" width="880" height="680"/>
+					   className="rounded-md w-24 h-24 object-cover" width="880" height="680"/>
 			</div>
 		</div>
 	);

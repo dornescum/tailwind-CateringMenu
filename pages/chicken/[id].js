@@ -7,23 +7,23 @@ import Link from "next/link";
 const images = [
 	{
 		id: 1,
-		title: 'pasta 1',
-		link: 'https://images.unsplash.com/photo-1574969903809-3f7a1668ceb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGFzdGElMjBjYXJib25hcmF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
+		title: 'chicken 1',
+		link: 'https://images.unsplash.com/photo-1597652096872-658bf24731ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Z3JpbGxlZCUyMGNoaWNrZW58ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
 	},
 	{
 		id: 2,
-		title: 'pasta 2',
-		link: 'https://images.unsplash.com/photo-1574969903809-3f7a1668ceb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGFzdGElMjBjYXJib25hcmF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
+		title: 'chicken 2',
+		link: 'https://images.unsplash.com/photo-1614398751058-eb2e0bf63e53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGZyaWVkJTIwY2hpY2tlbnxlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60'
 	},
 	{
 		id: 3,
-		title: 'pasta 3',
-		link: 'https://images.unsplash.com/photo-1574926053821-79c5e338a933?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cGFzdGElMjBjYXJib25hcmF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
+		title: 'chicken 3',
+		link: 'https://images.unsplash.com/photo-1594266063697-304befca9629?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2hpY2tlbiUyMHN0ZWFrfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60'
 	},
 ];
 
-const SoupId = ({itemId}) => {
-	const pastaImageId = 'https://images.unsplash.com/photo-1588013273468-315fd88ea34c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGFzdGElMjBjYXJib25hcmF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60';
+const ChickenId = ({itemId}) => {
+	const chickenImageId = 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JpbGxlZCUyMGNoaWNrZW58ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60';
 	const [data, setData] = useState([]);
 
 	useEffect(() => {
@@ -42,11 +42,11 @@ const SoupId = ({itemId}) => {
 		<div>
 			{!itemId && <p>no items</p>}
 			{itemId && <ArticleId title={itemId?.title} body={itemId?.body}
-								  img={pastaImageId}
+								  img={chickenImageId}
 			/>}
 			<ul className="flex flex-col md:flex-row flex-wrap">
 				{data.map((item) => {
-					return <Link href={`/pasta/${item.id}`} key={item.id}>
+					return <Link href={`/chicken/${item.id}`} key={item.id}>
 						<a className="basis-1/2 md:basis-1/3">
 							<li className="p-2 m-4">
 								<div className="p-1  bg-slate-100 rounded-md shadow-md">
@@ -62,12 +62,11 @@ const SoupId = ({itemId}) => {
 	);
 };
 
-export default SoupId;
+export default ChickenId;
 
 export async function getServerSideProps(context) {
 	const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.id} `);
 	const itemId = await res.json();
-	console.log(itemId);
 
 	return {
 		props: {

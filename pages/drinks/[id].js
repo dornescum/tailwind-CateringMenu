@@ -8,22 +8,22 @@ const images = [
 	{
 		id: 1,
 		title: 'pasta 1',
-		link: 'https://images.unsplash.com/photo-1574969903809-3f7a1668ceb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGFzdGElMjBjYXJib25hcmF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
+		link: 'https://images.pexels.com/photos/1170599/pexels-photo-1170599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
 	},
 	{
 		id: 2,
 		title: 'pasta 2',
-		link: 'https://images.unsplash.com/photo-1574969903809-3f7a1668ceb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGFzdGElMjBjYXJib25hcmF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
+		link: "https://images.pexels.com/photos/2531195/pexels-photo-2531195.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 	},
 	{
 		id: 3,
 		title: 'pasta 3',
-		link: 'https://images.unsplash.com/photo-1574926053821-79c5e338a933?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cGFzdGElMjBjYXJib25hcmF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
+		link: "https://images.pexels.com/photos/1189255/pexels-photo-1189255.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 	},
 ];
 
-const SoupId = ({itemId}) => {
-	const pastaImageId = 'https://images.unsplash.com/photo-1588013273468-315fd88ea34c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGFzdGElMjBjYXJib25hcmF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60';
+const DrinksId = ({itemId}) => {
+	const drinksImageId = 'https://images.pexels.com/photos/5546958/pexels-photo-5546958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
 	const [data, setData] = useState([]);
 
 	useEffect(() => {
@@ -42,7 +42,7 @@ const SoupId = ({itemId}) => {
 		<div>
 			{!itemId && <p>no items</p>}
 			{itemId && <ArticleId title={itemId?.title} body={itemId?.body}
-								  img={pastaImageId}
+								  img={drinksImageId}
 			/>}
 			<ul className="flex flex-col md:flex-row flex-wrap">
 				{data.map((item) => {
@@ -62,7 +62,7 @@ const SoupId = ({itemId}) => {
 	);
 };
 
-export default SoupId;
+export default DrinksId;
 
 export async function getServerSideProps(context) {
 	const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.id} `);
