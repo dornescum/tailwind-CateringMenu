@@ -79,7 +79,7 @@ const FoodTemplate = () => {
 					</div>
 					<div className='basis-1/2 flex justify-center items-center'>
 						<ul className="flex flex-col text-center mx-auto py-10">
-							<li className={`pb-2 text-2xl mb-2 lg:pb-12 ${title === "Pasta" ? "text-pink-300" : ""}`}>{title}</li>
+							<li className={`pb-2 text-2xl mb-2 lg:pb-12 ${title === "Pasta" ? "text-pink-300" : " "}`}>{title}</li>
 							<li className="" data-testid={title.slice(0,3)}>{description}</li>
 							<li className="mt-8 md:4" data-testid={(id * Math.random())*1000}>
 								{/*todo pus icon button*/}

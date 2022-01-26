@@ -29,12 +29,12 @@ const NewNavbar = () => {
 				{/*</Link>*/}
 				{showSidebar ?
 					<button onClick={() => setShowSidebar(!showSidebar)}
-							className="p-2 bg-slate-100 rounded-md transition ease-out bg-primary text-white">
+							className="p-2 bg-slate-100 rounded-md transition ease-out bg-primary text-white mr-4 md:mr-8">
 						<MdClose/>
 					</button>
 					:
 					<button onClick={() => setShowSidebar(!showSidebar)}
-							className="p-2 bg-slate-100 rounded-md transition ease-out bg-primary text-white">
+							className="p-2 bg-slate-100 rounded-md transition ease-out bg-primary text-white mr-4 md:mr-8">
 						<MdFormatAlignRight/>
 					</button>
 				}

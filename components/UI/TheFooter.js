@@ -35,7 +35,16 @@ const TheFooter = () => {
 
 				</li>
 				<li className='basis-1/3 cursor-pointer'><MdQuickreply /></li>
-				<li className='basis-1/3 cursor-pointer'><MdAccountCircle /></li>
+				<li className='basis-1/3 cursor-pointer'>
+					<Link href="/login">
+						<a>
+							<button className=''>
+								<MdAccountCircle />
+							</button>
+						</a>
+					</Link>
+
+				</li>
 			</ul>
 		</div>
 	);
