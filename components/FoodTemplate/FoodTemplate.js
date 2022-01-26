@@ -72,7 +72,7 @@ const FoodTemplate = () => {
 			</div>
 
 			<div className="text-center mx-auto my-2 px-4 py-4 my-4 rounded-md">
-				<h4 className="font-bold mb-4 text-2xl md:text-4xl">Special of the day</h4>
+				<h4 className="font-bold mb-4 text-2xl md:text-4xl select-none">Special of the day</h4>
 				<div className="flex flex-col md:flex-row bg-slate-50 mx-auto" data-cy={title}>
 					<div className="p-4 basis-1/2 flex justify-center items-center ">
 						<Image src={img} alt="food" className="rounded-md w-24 h-24" width="600" height="450"/>

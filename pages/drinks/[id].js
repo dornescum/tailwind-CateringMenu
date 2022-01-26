@@ -23,6 +23,7 @@ const images = [
 ];
 
 const DrinksId = ({itemId}) => {
+	console.log(itemId);
 	const drinksImageId = 'https://images.pexels.com/photos/5546958/pexels-photo-5546958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
 	const [data, setData] = useState([]);
 
@@ -46,7 +47,7 @@ const DrinksId = ({itemId}) => {
 			/>}
 			<ul className="flex flex-col md:flex-row flex-wrap">
 				{data.map((item) => {
-					return <Link href={`/pasta/${item.id}`} key={item.id}>
+					return <Link href={`/drinks/${item.id}`} key={item.id}>
 						<a className="basis-1/2 md:basis-1/3">
 							<li className="p-2 m-4">
 								<div className="p-1  bg-slate-100 rounded-md shadow-md">
@@ -64,13 +65,43 @@ const DrinksId = ({itemId}) => {
 
 export default DrinksId;
 
-export async function getServerSideProps(context) {
-	const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.id} `);
-	const itemId = await res.json();
+// export async function getServerSideProps(context) {
+// 	const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.id} `);
+// 	const itemId = await res.json();
+//
+// 	return {
+// 		props: {
+// 			itemId
+// 		}
+// 	};
+// }
 
+
+let url = 'https://jsonplaceholder.typicode.com/posts/';
+// creez cele 10 pagini
+export const getStaticPaths = async () => {
+	const res = await fetch(url);
+	const data = await res.json();
+	const paths = data.map((el) => {
+		return {
+			params: {id: el.id.toString()}
+		};
+	});
+	return {
+		paths: paths,
+		fallback: false
+	};
+};
+//  info individual
+export const getStaticProps = async (context) => {
+	const id = context.params.id;
+	const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+	const itemId = await res.json();
+	console.log(itemId);
 	return {
 		props: {
-			itemId
-		}
+			itemId: itemId
+		},
+		revalidate: 60
 	};
-}
+};
