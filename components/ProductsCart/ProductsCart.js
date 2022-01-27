@@ -5,7 +5,6 @@ import Link from "next/link";
 const ProductsCart = () => {
 	const {initialValue, setInitialValue} = useContext(ValueContext);
 	const value = ((initialValue * Math.PI / Math.random()) / Math.random()).toFixed(2);
-
 	return (
 		<div className='absolute bottom-10 right-1 md:right-10 rounded-md  bg-primary text-white h-48 w-[300px]
 		flex items-center justify-center opacity-100' data-testid='product-cart'>

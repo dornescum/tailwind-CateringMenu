@@ -8,7 +8,6 @@ const TheFooter = () => {
 
 	const {initialValue, setInitialValue} = useContext(ValueContext);
 	const [showCart, setShowCart]=useState(false);
-
 	const handleCartInfo =()=>{
 		setShowCart(!showCart)
 	}
