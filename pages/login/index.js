@@ -32,8 +32,8 @@ const Index = () => {
 					<label htmlFor="card-name">Name on card</label>
 					<input type="text" id="card-name" placeholder=" John Doe" required/>
 
-					<div className='flex justify-between'>
-						<div >
+					<div className='flex flex-col md:flex-row md:justify-between'>
+						<div>
 							<label htmlFor="expires">Expires</label>
 							<input type="password" id="expires" placeholder=" 01/19" required/>
 						</div>
@@ -47,15 +47,26 @@ const Index = () => {
 					<button className="btn-login">
 						Next
 					</button>
-					{/*{message && <div>*/}
-					{/*	<p className='bg-green-200 pl-4'>*/}
-					{/*		Dont t be stupid !*/}
-					{/*	</p>*/}
-					{/*	<div className='my-4 py-4 pl-4'>*/}
-					{/*		Never put your credit card info on a random site.*/}
-					{/*	</div>*/}
-					{/*</div>}*/}
+
+					<div className='mx-1'>
+						<div className='flex items-center justify-center flex-col text-justify'>
+							<h6 className='my-2'>Info & conditions</h6>
+							<p className='leading-tight my-4'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dolorum nobis possimus sequi.
+								Aliquam corporis esse harum maxime nobis placeat quasi ut voluptatibus? Aliquid autem corporis enim
+								fuga inventore quia, tempore vitae! Cupiditate deleniti dolorem error libero molestiae, nostrum quam
+								quia quod repudiandae voluptates. Ad, aspernatur necessitatibus? A, accusamus alias autem beatae
+								blanditiis consequatur debitis, dignissimos dolorem eos error exercitationem hic labore libero magni
+								molestias nam non odio perferendis perspiciatis provident quaerat, quod recusandae rem reprehenderit
+								rerum saepe sint suscipit temporibus veritatis voluptatibus! Architecto aspernatur deserunt earum
+								eos harum itaque iure, libero nihil ratione repellat repellendus rerum sequi sit voluptate.</p>
+						</div>
+					</div>
+
 				</form>
+
+
+
+
 			</div>
 
 
