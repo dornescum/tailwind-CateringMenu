@@ -19,8 +19,8 @@ const menus = [
 ];
 
 const SidebarMenu = (props) => {
-	return (<aside className="absolute min-h-screen h-full z-50 transition-all
-		bg-gray-200 text-gray-600 w-64 top-0 left-0 opacity-100">
+	return (<aside className="absolute  h-screen z-50 transition-all
+		bg-gray-200 text-gray-600 w-64 top-0 left-0 opacity-100 overflow-y-auto">
 		<div className="text-center cursor-pointer transition-all duration-700 ease-out delay-700">
 			{/*<Link href="/">*/}
 			{/*	<a>*/}
