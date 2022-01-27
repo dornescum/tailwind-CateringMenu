@@ -79,6 +79,22 @@
       "subtitle": "testing subtitle",
       "img": "/assets/drinks.jpg",
       "link": "drinks"
+    },
+    {
+      "id": "pasta-1",
+      "title": "pasta",
+      "description": "This is a pasta",
+      "subtitle": "testing subtitle",
+      "img": "/assets/p3.jpg",
+      "link": "pasta"
+    },
+    {
+      "id": "pasta-2",
+      "title": "pasta 2",
+      "description": "This is a pasta",
+      "subtitle": "testing subtitle",
+      "img": "/assets/p3.jpg",
+      "link": "pasta"
     }
   ],
   "salads": [
