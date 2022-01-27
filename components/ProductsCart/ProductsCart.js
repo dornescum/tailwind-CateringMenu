@@ -7,7 +7,7 @@ const ProductsCart = () => {
 	const value = ((initialValue * Math.PI / Math.random()) / Math.random()).toFixed(2);
 
 	return (
-		<div className='absolute bottom-10 -left-10 rounded-md  bg-primary text-white h-48 w-48
+		<div className='absolute bottom-10 right-1 md:right-10 rounded-md  bg-primary text-white h-48 w-[300px]
 		flex items-center justify-center opacity-100' data-testid='product-cart'>
 			<div className='flex flex-col' data-testid='cart'>
 				<p data-testid=''>{initialValue} items = {value} &euro;</p>
