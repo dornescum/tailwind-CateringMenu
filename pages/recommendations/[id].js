@@ -7,23 +7,23 @@ import Link from "next/link";
 const images = [
 	{
 		id: 1,
-		title: 'burger 1',
-		link: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVyZ2Vyc3xlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60'
+		title: 'recommendation 1',
+		link:'https://images.pexels.com/photos/3535383/pexels-photo-3535383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
 	},
 	{
 		id: 2,
-		title: 'burger 2',
-		link: 'https://images.unsplash.com/photo-1549611016-3a70d82b5040?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8YnVyZ2Vyc3xlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60'
+		title: 'recommendation 2',
+		link:"https://images.pexels.com/photos/365459/pexels-photo-365459.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 	},
 	{
 		id: 3,
-		title: 'burger 3',
-		link: 'https://images.unsplash.com/photo-1571091655789-405eb7a3a3a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGJ1cmdlcnN8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
+		title: 'recommendation 3',
+		link:"https://images.pexels.com/photos/3850838/pexels-photo-3850838.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 	},
 ];
 
-const SoupId = ({itemId}) => {
-	const burgerImageId = 'https://images.unsplash.com/photo-1522244451342-a41bf8a13d73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDF8fGJ1cmdlcnN8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60';
+const RId = ({itemId}) => {
+	const RImageId = 'https://images.pexels.com/photos/3186654/pexels-photo-3186654.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
 	const [data, setData] = useState([]);
 
 	useEffect(() => {
@@ -42,11 +42,11 @@ const SoupId = ({itemId}) => {
 		<div>
 			{!itemId && <p>no items</p>}
 			{itemId && <ArticleId title={itemId?.title} body={itemId?.body}
-								  img={burgerImageId}
+								  img={RImageId}
 			/>}
 			<ul className="flex flex-col md:flex-row flex-wrap">
 				{data.map((item) => {
-					return <Link href={`/burgers/${item.id}`} key={item.id}>
+					return <Link href={`/pork/${item.id}`} key={item.id}>
 						<a className="basis-1/2 md:basis-1/3">
 							<li className="p-2 m-4">
 								<div className="p-1  bg-slate-100 rounded-md shadow-md">
@@ -62,7 +62,7 @@ const SoupId = ({itemId}) => {
 	);
 };
 
-export default SoupId;
+export default RId;
 
 export async function getServerSideProps(context) {
 	const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.id} `);

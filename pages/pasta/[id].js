@@ -7,23 +7,23 @@ import Link from "next/link";
 const images = [
 	{
 		id: 1,
-		title: 'burger 1',
-		link: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVyZ2Vyc3xlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60'
+		title: 'pasta 1',
+		link: 'https://images.unsplash.com/photo-1574969903809-3f7a1668ceb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGFzdGElMjBjYXJib25hcmF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
 	},
 	{
 		id: 2,
-		title: 'burger 2',
-		link: 'https://images.unsplash.com/photo-1549611016-3a70d82b5040?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8YnVyZ2Vyc3xlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60'
+		title: 'pasta 2',
+		link: 'https://images.unsplash.com/photo-1574969903809-3f7a1668ceb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGFzdGElMjBjYXJib25hcmF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
 	},
 	{
 		id: 3,
-		title: 'burger 3',
-		link: 'https://images.unsplash.com/photo-1571091655789-405eb7a3a3a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGJ1cmdlcnN8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
+		title: 'pasta 3',
+		link: 'https://images.unsplash.com/photo-1574926053821-79c5e338a933?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cGFzdGElMjBjYXJib25hcmF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
 	},
 ];
 
 const SoupId = ({itemId}) => {
-	const burgerImageId = 'https://images.unsplash.com/photo-1522244451342-a41bf8a13d73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDF8fGJ1cmdlcnN8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60';
+	const pastaImageId = 'https://images.unsplash.com/photo-1588013273468-315fd88ea34c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGFzdGElMjBjYXJib25hcmF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60';
 	const [data, setData] = useState([]);
 
 	useEffect(() => {
@@ -42,11 +42,11 @@ const SoupId = ({itemId}) => {
 		<div>
 			{!itemId && <p>no items</p>}
 			{itemId && <ArticleId title={itemId?.title} body={itemId?.body}
-								  img={burgerImageId}
+								  img={pastaImageId}
 			/>}
 			<ul className="flex flex-col md:flex-row flex-wrap">
 				{data.map((item) => {
-					return <Link href={`/burgers/${item.id}`} key={item.id}>
+					return <Link href={`/pasta/${item.id}`} key={item.id}>
 						<a className="basis-1/2 md:basis-1/3">
 							<li className="p-2 m-4">
 								<div className="p-1  bg-slate-100 rounded-md shadow-md">
