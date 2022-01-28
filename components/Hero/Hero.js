@@ -23,7 +23,7 @@ const Hero = () => {
 				    alt='pasta image plate'/>
 
 			<div className='absolute inset-6 md:inset-10 lg:inset-40'>
-				<h1 className='text-pink-300 text-base md:text-2xl text-4xl'>best food in town</h1>
+				<h1 className='text-pink-300 text-base md:text-2xl text-4xl'>Best food in town</h1>
 				<p className='text-pink-300'>09090909</p>
 			</div>
 		</div>

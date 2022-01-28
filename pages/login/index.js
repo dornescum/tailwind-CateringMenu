@@ -11,7 +11,7 @@ const Index = () => {
 			<div className={`flex flex-col form-container ${message ? "bg-red-200": ""}`}>
 				{message && <div>
 					<p className='bg-green-600 pl-4'>
-						Dont t be stupid !
+						Thanks for the money !
 					</p>
 					<div className='my-2 py-1 pl-4'>
 						Never put your credit card info on a random site.

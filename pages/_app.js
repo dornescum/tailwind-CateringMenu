@@ -1,5 +1,7 @@
 import React, {useState, useReducer} from "react";
 import '../styles/globals.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Layout from "../components/UI/Layout";
 import TheFooter from "../components/UI/TheFooter";
 import NewNavbar from "../components/UI/NewNavbar";

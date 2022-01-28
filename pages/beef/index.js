@@ -7,7 +7,7 @@ const Index = ({beef}) => {
 	return (
 		<div>
 			<div className='bg-white'>
-				<h1 className='text-center m-2 p-1 text-4xl animate-bounce'>Burgers</h1>
+				<h1 className='text-center m-2 p-1 text-4xl animate-bounce'>Beef</h1>
 				{!beef && <p>no beef</p>}
 				{beef && <div className="m-2">
 					<ul className="flex flex-col md:flex-row flex-wrap">

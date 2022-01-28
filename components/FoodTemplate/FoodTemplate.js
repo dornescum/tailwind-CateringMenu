@@ -3,7 +3,6 @@ import WifiLogo from "../../assets-next/icons/WifiLogo";
 import Signal from "../../assets-next/icons/Signal";
 import Battery from "../../assets-next/icons/Battery";
 import SearchBox from "./SearchBox";
-import SwitchBtn from "../SwitchBtn/SwitchBtn";
 import Categories from "./Categories";
 import Image from "next/image";
 import Button from "../UI/Button";

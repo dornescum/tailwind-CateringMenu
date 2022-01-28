@@ -3,18 +3,20 @@ import path from "path";
 import Head from 'next/head';
 import Layout from "../components/UI/Layout";
 import Link from "next/link";
-import SwitchBtn from "../components/SwitchBtn/SwitchBtn";
 import Image from "next/image";
 import FoodTemplate from "../components/FoodTemplate/FoodTemplate";
 import Hero from "../components/Hero/Hero";
 import Categories from "../components/FoodTemplate/Categories";
+import SliderComponent from "../components/SliderComponent/Slider";
+// import "~slick-carousel/slick/slick.css";
+// import "~slick-carousel/slick/slick-theme.css";
 
 
 function HomePage(props) {
 	const {products} = props;
 
 	return (
-		<main className='text-[Dongle]'>
+		<main className='text-[Dongle] overflow-hidden'>
 			<Head>
 				<title>Best food in town</title>
 				<link rel="icon" href="/favicon.ico"/>
@@ -30,6 +32,8 @@ function HomePage(props) {
 						</div>
 					})}
 				</div>
+
+				<SliderComponent />
 			</Layout>
 		</main>
 	);
