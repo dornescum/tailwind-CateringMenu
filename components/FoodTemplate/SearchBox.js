@@ -1,22 +1,17 @@
 import React, {useState} from 'react';
-import ChevronRight from "../../assets-next/icons/ChevronRight";
-import {MdSearch, MdOutlineKeyboardArrowDown} from "react-icons/md";
+import {MdSearch,  MdClose} from "react-icons/md";
 import Link from "next/link";
 
 
 const SearchBox = () => {
-	const routes = ['beef', 'pasta'];
+	const routes = ['beef','burgers', 'chicken', 'desert', 'drinks', 'pasta', 'pork', 'recommendations', 'salads', 'soups'];
 	const [enteredInput, setEnteredInput] = useState("");
-	const [route, setRoute] = useState(routes);
+	const [showList, setShowList] = useState(false);
 
-	const handleFilter = (e) => {
-		const enteredInput = e.target.value;
-		setEnteredInput(enteredInput);
-		setRoute(enteredInput)
-		console.log(route);
-	};
+	const handleList=()=>{
+		setShowList(!showList)
+	}
 	const clearInput = () => {
-		setRoute([]);
 		setEnteredInput('');
 	};
 
@@ -24,45 +19,47 @@ const SearchBox = () => {
 		<div className="px-4">
 			{/*todo search filter*/}
 			<div className="pt-8">
-				<div className="bg-slate-50 flex py-4 rounded-md px-4 md:items-center  md:w-96 md:mx-auto">
+				<div className="bg-slate-50 flex py-4 rounded-md px-4 md:items-center  md:w-96 md:mx-auto" onClick={handleList}>
 					<input type="text" placeholder="Search for pasta or burgers .."
-						   className="bg-slate-50 w-64 md:w-full"
+						   className="bg-slate-50 w-64 md:w-full mr-1 focus:outline-none"
 						   data-testid="form-input"
-						   value={enteredInput}
 						   minLength="3"
-						   id="form"/>
-					<button className="pr-6 md:pr-4 text-stone-300" disabled>
-						<MdSearch/>
-					</button>
+						   id="form"
+						   value={enteredInput}
+						   onChange={(e)=>{setEnteredInput(e.target.value)}}
+					/>
 					<div className="flex flex-1 items-center justify-end">
-						{/*{setRoute &&*/}
-						{/*	<Link href={route}>*/}
-						{/*		<a>*/}
-									<div className="bg-primary text-white p-2 rounded-md" id="close-btn" >
-										<MdOutlineKeyboardArrowDown/>
-									</div>
-						{/*		</a>*/}
-						{/*	</Link>*/}
-						{/*}*/}
-
+						{showList && <div className="bg-primary text-white p-2 rounded-md" id="close-btn" onClick={clearInput}>
+							<MdClose/>
+						</div>}
+						{!showList && <div className="bg-primary text-white p-2 rounded-md" id="close-btn" onClick={clearInput}>
+							<MdSearch/>
+						</div>}
 					</div>
 				</div>
 			</div>
-
+			<div className={`${showList ? 'bg-slate-50':"bg-white"} relative flex py-4 rounded-md px-4 md:items-center  md:w-96 md:mx-auto`} >
+				{showList &&
+					<ul className='bg-slate-50 absolute top-0 left-0 z-10 block w-full rounded-md pb-4'>
+						{routes.filter((val)=>{
+							if (enteredInput === ''){
+								return val
+							} else if (val.toLowerCase().includes(enteredInput.toLowerCase())){
+								return val
+							}
+						}).map((route, index)=>{
+							return <li key={index} className='bg-slate-50 capitalize py-1 pl-4'>
+								<Link href={route}>
+									<a>{route}</a>
+								</Link>
+							</li>
+						})}
+					</ul>
+				}
+			</div>
 
 		</div>
 	);
 };
 
 export default SearchBox;
-
-// {id:"r1", route:'/beef'},
-// {id:"r2", route:'/burgers'},
-// {id:"r3", route:'/chicken'},
-// {id:"r4", route:'/dessert'},
-// {id:"r5", route:'/drinks'},
-// {id:"r6", route:'/pasta'},
-// {id:"r7", route:'/pork'},
-// {id:"r8", route:'/recommendations'},
-// {id:"r9", route:'/salads'},
-// {id:"r10", route:'/soups'},

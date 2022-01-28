@@ -1,9 +1,10 @@
 import React, {useContext, useEffect} from 'react';
-import WifiLogo from "../../assets-next/icons/WifiLogo";
-import Signal from "../../assets-next/icons/Signal";
-import Battery from "../../assets-next/icons/Battery";
+// import {MdHearing} from "react-icons/md";
+import { AiOutlineHeart } from "react-icons/ai";
+
+
 import SearchBox from "./SearchBox";
-import Categories from "./Categories";
+
 import Image from "next/image";
 import Button from "../UI/Button";
 import {ValueContext} from "../../context/ValueContext";
@@ -79,10 +80,14 @@ const FoodTemplate = () => {
 					<div className='basis-1/2 flex justify-center items-center'>
 						<ul className="flex flex-col text-center mx-auto py-10">
 							<li className={`pb-2 text-2xl mb-2 lg:pb-12 ${title === "Pasta" ? "text-pink-300" : " "}`}>{title}</li>
-							<li className="" data-testid={title.slice(0,3)}>{description}</li>
+							<li className="pr-0 lg:pr-12" data-testid={title.slice(0,3)}>{description}</li>
 							<li className="mt-8 md:4" data-testid={(id * Math.random())*1000}>
-								{/*todo pus icon button*/}
-								<div className="flex justify-end" data-testid={title.slice(3,6)}>
+								<div className="flex justify-end md:pr-8 lg:pr-12" data-testid={title.slice(3,6)}>
+									{/*todo add favorite*/}
+									{/*<Button  data-testid={id} color={'bg-white'}>*/}
+									{/*	<AiOutlineHeart />*/}
+									{/*</Button>*/}
+
 									<Button onClick={handleCart} data-testid={id}>Add to cart</Button>
 								</div>
 							</li>

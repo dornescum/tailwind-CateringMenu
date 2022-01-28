@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import {MdAccountCircle, MdQuickreply, MdShoppingBasket, MdHouse} from "react-icons/md";
+import {MdAccountCircle, MdQuickreply, MdShoppingBasket, MdHouse, MdClose} from "react-icons/md";
 import Link from "next/link";
 import {ValueContext} from "../../context/ValueContext";
 import ProductsCart from "../ProductsCart/ProductsCart";
@@ -62,7 +62,10 @@ const TheFooter = () => {
 							<MdQuickreply className="h-8 w-8 text-gray-600"/>
 						</button>
 						{showHelp &&
-							<div className="absolute bottom-12 -right-36 md:-right-20 h-48 w-[300px] md:w-96 bg-gray-200 rounded-md">
+							<div className="absolute bottom-12 -right-36 md:-right-20 h-48 w-[300px] md:w-96 bg-gray-200 rounded-md" >
+								<button className='p-1' onClick={handleHelp}>
+									<MdClose color='white'/>
+								</button>
 								<div className='flex  justify-start flex-col py-1 px-2'>
 										<h4 className='flex justify-end py-2 '>
 											Need help?
