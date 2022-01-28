@@ -16,7 +16,7 @@ function HomePage(props) {
 	return (
 		<main className='text-[Dongle]'>
 			<Head>
-				<title>Create Next App</title>
+				<title>Best food in town</title>
 				<link rel="icon" href="/favicon.ico"/>
 			</Head>
 
