@@ -22,8 +22,6 @@ const SidebarMenu = (props) => {
 	return (<aside className="absolute  h-screen z-50 transition-all
 		bg-gray-200 text-gray-600 w-64 top-0 left-0 opacity-100 overflow-y-auto">
 		<div className="text-center cursor-pointer transition-all duration-700 ease-out delay-700">
-			{/*<Link href="/">*/}
-			{/*	<a>*/}
 					<div className="flex items-center py-2 pr-8 bg-gray-200 justify-between">
 						<h1 className="text-2xl w-36 text-gray-600">Menu</h1>
 						<div className="bg-primary text-white rounded h-6 w-6 items-center flex justify-center"
@@ -31,8 +29,6 @@ const SidebarMenu = (props) => {
 							<MdChevronRight/>
 						</div>
 					</div>
-			{/*	</a>*/}
-			{/*</Link>*/}
 		</div>
 		<nav>
 			<div className="flex flex-col py-4">

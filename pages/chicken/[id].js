@@ -51,7 +51,7 @@ const ChickenId = ({itemId}) => {
 							<li className="p-2 m-4">
 								<div className="p-1  bg-slate-100 rounded-md shadow-md">
 									<IndividualPageProduct title={item?.title} body={item?.body}
-														   img={link}/>
+														   img={link} id={item?.id}/>
 								</div>
 							</li>
 						</a>

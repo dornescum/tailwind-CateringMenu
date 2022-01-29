@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;700&display=swap');*/
 @import "login.css";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 /*todo de schimbat font general*/
-.html{
-    font-family: 'Dongle', sans-serif;
-}
+/*.html{*/
+/*    font-family: 'Dongle', sans-serif;*/
+/*}*/
 
-@layer base {
-    font-family: 'Dongle', sans-serif;
-}
+/*@layer base {*/
+/*    font-family: 'Dongle', sans-serif;*/
+/*}*/

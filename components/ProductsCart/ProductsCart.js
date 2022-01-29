@@ -16,14 +16,9 @@ const ProductsCart = () => {
 					<p>Total </p>
 					<p data-testid='value-cart'>  {value} &euro;</p>
 				</div>
-
 				{value == 0 ?
 					<div className='bg-white text-primary my-4 rounded-md' data-testid='link-login'>
-						{/*<Link href="/login">*/}
-						{/*	<a >*/}
 								<p className='py-2 px-2'> No orders yet </p>
-						{/*	</a>*/}
-						{/*</Link>*/}
 					</div>
 					:
 					<div className='bg-white text-primary my-4 rounded-md' data-testid='link-login'>
@@ -34,14 +29,6 @@ const ProductsCart = () => {
 						</Link>
 					</div>
 				}
-
-				{/*<div className='bg-white text-primary my-4 rounded-md' data-testid='link-login'>*/}
-				{/*	<Link href="/login">*/}
-				{/*		<a >*/}
-				{/*			<p className='py-2 px-2'> Place my order </p>*/}
-				{/*		</a>*/}
-				{/*	</Link>*/}
-				{/*</div>*/}
 			</div>
 
 		</div>

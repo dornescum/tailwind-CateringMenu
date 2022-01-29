@@ -21,74 +21,66 @@ const SliderComponent = () => {
 		autoplaySpeed: 3000,
 		cssEase: "linear"
 	};
-	return (
-		<div className="mt-2 mb-8 mx-4 w-full ">
+	return (<div className="mt-2 mb-8 mx-4 w-full ">
 			<h2 className="my-2 font-bold pl-2 md:pl-12">Recommendation</h2>
 			<Slider {...settings}>
 				<div className="p-1">
 					<Link href="/beef">
 						<a>
 							<div className="flex items-center justify-center">
-								<Image src={Beef} width="400" height="300" className="rounded-md m-1 md:m-0"/>
+								<Image src={Beef} alt={Beef} width="400" height="300"
+									   className="rounded-md m-1 md:m-0"/>
 							</div>
-
 						</a>
 					</Link>
-
 				</div>
 				<div className="p-1">
 					<Link href="/burgers">
 						<a>
 							<div className="flex items-center justify-center">
-								<Image src={Burger} width="400" height="300" className="rounded-md"/>
+								<Image src={Burger} alt={Burger} width="400" height="300" className="rounded-md"/>
 							</div>
 						</a>
 					</Link>
-
 				</div>
 				<div className="p-1">
 					<Link href="/pasta">
 						<a>
 							<div className="flex items-center justify-center">
-								<Image src={Pasta} width="400" height="300" className="rounded-md"/>
+								<Image src={Pasta} alt={Pasta} width="400" height="300" className="rounded-md"/>
 							</div>
 						</a>
 					</Link>
-
 				</div>
 				<div className="p-1">
 					<Link href="/pork">
 						<a>
 							<div className="flex items-center justify-center">
-								<Image src={Pork} width="400" height="300" className="rounded-md"/>
+								<Image src={Pork} alt={Pork} width="400" height="300" className="rounded-md"/>
 							</div>
 						</a>
 					</Link>
-
 				</div>
 				<div className="p-1">
 					<Link href="/salads">
 						<a>
 							<div className="flex items-center justify-center">
-								<Image src={Salad} width="400" height="300" className="rounded-md"/>
+								<Image src={Salad} alt={Salad} width="400" height="300" className="rounded-md"/>
 							</div>
 						</a>
 					</Link>
-
 				</div>
 				<div className="p-1">
 					<Link href="/desert">
 						<a>
 							<div className="flex items-center justify-center">
-								<Image src={Dessert} width="400" height="300" className="rounded-md"/>
+								<Image src={Dessert} alt={Dessert} width="400" height="300" className="rounded-md"/>
 							</div>
 						</a>
 					</Link>
-
 				</div>
 			</Slider>
-		</div>
-	);
+		</div>);
 };
 
 export default SliderComponent;

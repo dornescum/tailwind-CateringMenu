@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Layout from "../components/UI/Layout";
 import TheFooter from "../components/UI/TheFooter";
 import NewNavbar from "../components/UI/NewNavbar";
+import Head from "next/head";
 
 
 
@@ -20,6 +21,14 @@ function MyApp({Component, pageProps}) {
 
 	return <ValueContext.Provider value={{initialValue, setInitialValue, handleCart}}>
 		<Layout>
+			<Head>
+				<meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+				<meta name="virtual menu" content="virtual catering delivery company"/>
+				<meta name='Next js' content='Html 5, Css 3, Javascript, React js, Next js, Tailwind css'/>
+				<meta name='author' content='Mihai Dornescu'/>
+				<link rel="icon" href="/favicon.ico"/>
+				<title>Best food in town</title>
+			</Head>
 			<NewNavbar />
 			<Component {...pageProps} />
 			<TheFooter />
