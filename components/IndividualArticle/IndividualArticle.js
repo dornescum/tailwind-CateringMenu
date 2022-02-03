@@ -2,19 +2,25 @@ import React from 'react';
 import Link from "next/link";
 import Image from "next/image";
 
-const IndividualArticle = ({title, description, img, id, price}) => {
+const IndividualArticle = ({title, description, img, id, price, subtitle, ingredients}) => {
 
-	// const prices = Math.floor(Math.random() * 100);
 
-	return (<div className="p-1  bg-slate-100 rounded-md shadow-md" data-testid={id}>
-			<div className="mb-4 h-48" data-testid={title?.slice(0,4)}>
-				<h3 className="mb-3 text-2xl flex justify-center items-center" data-testid={title?.slice(1,4)}>{title.slice(0, 10)}</h3>
-				<p className="text-justify" data-testid={description?.slice(1,4)}>{description}</p>
+	return (<div className="p-1  bg-slate-100 rounded-md shadow-md font-dosis lg:text-xl" data-testid={id}>
+			<div className="mb-4 h-96 md:h-[400px] relative" data-testid={title?.slice(0,4)}>
+				<div>
+					<h3 className="mb-3 text-2xl flex justify-center items-center" data-testid={title?.slice(1,4)}>{title}</h3>
+					<p className="text-justify" data-testid={description?.slice(1,4)}>{description.slice(0,200)} ...</p>
+				</div>
+				<div className='py-4'>
+					<p className='py-1'> # {subtitle}</p>
+					<p className='py-1'><span className='font-medium'>Ingredients</span> : {ingredients}.</p>
+				</div>
+				<div className="absolute bottom-0 w-full py-1 flex flex-col lg:flex-row justify-between" data-testid={description?.slice(7,15)}>
+					<p className="font-bold py-1">More info here ...</p>
+					<p className={`font-bold  rounded-sm ${price > 10 ? 'bg-yellow-200' : 'bg-green-300 animate-pulse'}`}>Price {price} $</p>
+				</div>
 			</div>
-			<div className="py-2 md:py-6 px-1 my-2 mt-6 flex flex-col lg:flex-row justify-between" data-testid={description?.slice(7,15)}>
-				<p className="font-bold">More info here ...</p>
-				<p className={`font-bold px-1 rounded-sm ${price > 20 ? 'bg-yellow-200' : 'bg-green-300 animate-pulse'}`}>Price {price} </p>
-			</div>
+
 			<div className="relative">
 				<p className="absolute top-10 left-10 z-10 text-white text-2xl animate-pulse" data-testid={title?.slice(0,9)}>
 					buy it!

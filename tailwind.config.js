@@ -12,9 +12,10 @@ module.exports = {
 					200:"#FDE047",
 				}
 			},
-			// fontFamily:{
-			// 	'dongle': ['"Dongle"', 'cursive']
-			// }
+			fontFamily:{
+				// 'dongle': ['"Dongle"', 'cursive']
+				'dosis': ['"Dosis"', 'sans-serif']
+			}
 		},
 	},
 	plugins: [

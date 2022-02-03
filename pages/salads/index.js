@@ -6,7 +6,6 @@ import IndividualArticle from "../../components/IndividualArticle/IndividualArti
 
 
 const Index = ({items}) => {
-	// console.log(items);
 const saladImage ='https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MjF8NDI3ODI5MTl8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60'
 	return (<div>
 		<div className="bg-white">
@@ -19,8 +18,11 @@ const saladImage ='https://images.unsplash.com/photo-1490645935967-10de6ba17061?
 							return <Link href={`/salads/${item.id}`} key={item.id}>
 								<a className="basis-1/2 md:basis-1/3">
 									<li className="p-2 m-1">
-										{/*<IndividualPage title={item?.title} body={item?.body} img={item?.img}/>*/}
-										<IndividualArticle title={item?.title} description={item?.description} img={item?.img} id={item?.id} price={item?.price}/>
+										<IndividualArticle title={item?.title}
+														   description={item?.description}
+														   img={item?.img} id={item?.id} price={item?.price}
+														   subtitle={item?.subtitle} ingredients={item?.ingredients}
+										/>
 									</li>
 								</a>
 							</Link>;
