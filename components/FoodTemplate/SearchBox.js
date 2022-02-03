@@ -40,7 +40,7 @@ const SearchBox = () => {
 			</div>
 			<div className={`${showList ? 'bg-slate-50':"bg-white"} relative flex py-4 rounded-md px-4 md:items-center  md:w-96 md:mx-auto`} >
 				{showList &&
-					<ul className='bg-slate-50 absolute top-0 left-0 z-10 block w-full rounded-md pb-4'>
+					<ul className='bg-slate-50 text-slate-500 absolute top-0 left-0 z-10 block w-full rounded-md pb-4'>
 						{routes.filter((val)=>{
 							if (enteredInput === ''){
 								return val
