@@ -1,9 +1,10 @@
 import React from 'react';
 import Link from "next/link";
 import IndividualPage from "../../components/IndividualPage/IndividualPage";
+import IndividualArticle from "../../components/IndividualArticle/IndividualArticle";
+
 
 const Index = ({items}) => {
-	const soupImage='https://images.unsplash.com/photo-1548943487-a2e4e43b4853?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHNvdXBzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
 	return (
 		<div>
 			<div className="bg-white">
@@ -16,7 +17,12 @@ const Index = ({items}) => {
 								return <Link href={`/soups/${item.id}`} key={item.id}>
 									<a className="basis-1/2 md:basis-1/3">
 										<li className="p-2 m-1">
-											<IndividualPage title={item?.title} body={item?.body} img={soupImage}/>
+											{/*<IndividualPage title={item?.title} body={item?.body} img={soupImage}/>*/}
+											<IndividualArticle title={item?.title}
+															   description={item?.description}
+															   img={item?.img} id={item?.id} price={item?.price}
+															   subtitle={item?.subtitle} ingredients={item?.ingredients}
+											/>
 										</li>
 									</a>
 								</Link>;
@@ -32,7 +38,7 @@ const Index = ({items}) => {
 export default Index;
 
 export const getStaticProps = async () => {
-	const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`);
+	const res = await fetch(`https://food-nodejs.herokuapp.com/api/soups`);
 	const items = await res.json();
 
 	return {

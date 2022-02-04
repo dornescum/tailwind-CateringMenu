@@ -27,7 +27,7 @@ const IdComponent = ({title, description, id, price, img, handleCart, subtitle, 
 					{/*<p className='py-1'> # {subtitle}</p>*/}
 					<p className='py-1'><span className='font-medium'>Ingredients</span> : {ingredients}.</p>
 				</div>
-				<div className="flex justify-between items-center mx-4" data-testid={description.slice(4,9)}>
+				<div className="flex justify-between items-center mx-0 md:mx-4" data-testid={description.slice(4,9)}>
 					{price > 50 ? <ExpensiveLabel data-testId={title.slice(4,6)}>{price} &euro;</ExpensiveLabel>
 						: <PriceLabel data-testId={title.slice(4,6)}>{price} &euro;</PriceLabel>}
 					<Button className={'bg-green-200 text-blue-800 p-3'} onClick={handleCart} data-testId={title.slice(3,6)}>Add to

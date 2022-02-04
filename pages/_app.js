@@ -19,6 +19,9 @@ function MyApp({Component, pageProps}) {
 		setInitialValue(initialValue + 1);
 	};
 
+
+
+
 	return <ValueContext.Provider value={{initialValue, setInitialValue, handleCart}}>
 		<Layout>
 			<Head>
