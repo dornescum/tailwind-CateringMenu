@@ -5,6 +5,8 @@ import IndividualArticle from "../../components/IndividualArticle/IndividualArti
 
 
 const Index = ({items}) => {
+	console.log(items);
+	console.log(items[0].img);
 	return (
 		<div>
 			<div className="bg-white">
@@ -14,6 +16,7 @@ const Index = ({items}) => {
 					<div className="m-2">
 						<ul className="flex flex-col md:flex-row flex-wrap">
 							{items.map((item) => {
+								console.log(item);
 								return <Link href={`/soups/${item.id}`} key={item.id}>
 									<a className="basis-1/2 md:basis-1/3">
 										<li className="p-2 m-1">
