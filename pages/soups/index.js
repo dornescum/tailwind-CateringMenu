@@ -5,7 +5,7 @@ import IndividualArticle from "../../components/IndividualArticle/IndividualArti
 
 
 const Index = ({items}) => {
-	console.log(items);
+	// console.log(items);
 	console.log(items[0].img);
 	return (
 		<div>
