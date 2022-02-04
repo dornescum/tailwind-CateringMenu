@@ -6,7 +6,7 @@ import IndividualArticle from "../../components/IndividualArticle/IndividualArti
 
 
 const Index = ({items}) => {
-const saladImage ='https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MjF8NDI3ODI5MTl8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60'
+
 	return (<div>
 		<div className="bg-white">
 			<h1 className="text-center m-2 p-1 text-4xl animate-bounce">Salads</h1>
@@ -36,7 +36,6 @@ const saladImage ='https://images.unsplash.com/photo-1490645935967-10de6ba17061?
 
 export default Index;
 export const getStaticProps = async () => {
-	// const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`);
 	const res = await fetch(`https://food-nodejs.herokuapp.com/api/salads`);
 	const items = await res.json();
 

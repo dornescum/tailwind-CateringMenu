@@ -16,7 +16,7 @@ const IndividualArticle = ({title, description, img, id, price, subtitle, ingred
 					<p className='py-1'><span className='font-medium'>Ingredients</span> : {ingredients}.</p>
 				</div>
 				<div className="absolute bottom-0 w-full py-1 flex flex-col lg:flex-row justify-between" data-testid={description?.slice(7,15)}>
-					<p className="font-bold py-1">More info here ...</p>
+					<p className="font-bold">More info here ...</p>
 					<p className={`font-bold  rounded-sm ${price > 10 ? 'bg-yellow-200' : 'bg-green-300 animate-pulse'}`}>Price {price} $</p>
 				</div>
 			</div>
