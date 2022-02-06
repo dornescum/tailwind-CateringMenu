@@ -1,57 +1,50 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import ArticleId from "../../components/ArticleId/ArticleId";
 import IndividualPageProduct from "../../components/IndividualPage/IndividualPage";
 import Link from "next/link";
+import IdComponent from "../../components/IdComponent/IdComponent";
+import {ValueContext} from "../../context/ValueContext";
+import IndividualArticle from "../../components/IndividualArticle/IndividualArticle";
 
 
-const images = [
-	{
-		id: 1,
-		title: 'burger 1',
-		link: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVyZ2Vyc3xlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60'
-	},
-	{
-		id: 2,
-		title: 'burger 2',
-		link: 'https://images.unsplash.com/photo-1549611016-3a70d82b5040?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8YnVyZ2Vyc3xlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60'
-	},
-	{
-		id: 3,
-		title: 'burger 3',
-		link: 'https://images.unsplash.com/photo-1571091655789-405eb7a3a3a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGJ1cmdlcnN8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
-	},
-];
+const BeefId = ({itemId}) => {
+	const {handleCart} = useContext(ValueContext);
 
-const SoupId = ({itemId}) => {
-	const burgerImageId = 'https://images.unsplash.com/photo-1522244451342-a41bf8a13d73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDF8fGJ1cmdlcnN8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60';
-	const [data, setData] = useState([]);
+	const [burgerData, setBurgerData] = useState([]);
+	const title = itemId.message.title;
+	const description = itemId.message.description;
+	const price = itemId.message.price;
+	const ingredients = itemId.message.ingredients;
+	const subtitle = itemId.message.subtitle;
+	const image = itemId.message.img;
+	const id = itemId.message.id;
 
+
+	const getData = async () => {
+		const res = await fetch('https://food-nodejs.herokuapp.com/api/burgers');
+		const data = await res.json();
+		setBurgerData(data);
+	};
 	useEffect(() => {
-		const getData = async () => {
-			const res = await fetch('https://jsonplaceholder.typicode.com/posts/?_limit=12');
-			const data = await res.json();
-			setData(data);
-		};
 		getData();
 	}, []);
-
-	const randomPhoto = Math.floor(Math.random() * images.length);
-	const {link} = images[randomPhoto];
 
 	return (
 		<div>
 			{!itemId && <p>no items</p>}
-			{itemId && <ArticleId title={itemId?.title} body={itemId?.body}
-								  img={burgerImageId}
-			/>}
+			{itemId &&<IdComponent title={title} description={description} price={price} id={id} img={image}
+								   handleCart={handleCart} ingredients={ingredients} subtitle={subtitle}/>}
+
 			<ul className="flex flex-col md:flex-row flex-wrap">
-				{data.map((item) => {
+				{burgerData.map((item) => {
 					return <Link href={`/burgers/${item.id}`} key={item.id}>
 						<a className="basis-1/2 md:basis-1/3">
 							<li className="p-2 m-4">
 								<div className="p-1  bg-slate-100 rounded-md shadow-md">
-									<IndividualPageProduct title={item?.title} body={item?.body}
-														   img={link}/>
+									<IndividualArticle title={item?.title}
+													   description={item?.description}
+													   img={item?.img} id={item?.id} price={item?.price}
+													   subtitle={item?.subtitle} ingredients={item?.ingredients}/>
 								</div>
 							</li>
 						</a>
@@ -62,10 +55,10 @@ const SoupId = ({itemId}) => {
 	);
 };
 
-export default SoupId;
+export default BeefId;
 
 export async function getServerSideProps(context) {
-	const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.id} `);
+	const res = await fetch(`https://food-nodejs.herokuapp.com/api/burgers/${context.params.id}`);
 	const itemId = await res.json();
 
 	return {

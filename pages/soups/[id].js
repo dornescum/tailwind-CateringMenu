@@ -32,8 +32,8 @@ const SoupId = ({itemId}) => {
 	return (
 		<div>
 			{!itemId && <p>no items</p>}
-			{itemId && <IdComponent title={title} description={description} price={price} id={id} img={image}
-									handleCart={handleCart} ingredients={ingredients} subtitle={subtitle}/>}
+			{/*{itemId && <IdComponent title={title} description={description} price={price} id={id} img={image}*/}
+			{/*						handleCart={handleCart} ingredients={ingredients} subtitle={subtitle}/>}*/}
 			<ul className="flex flex-col md:flex-row flex-wrap">
 				{soupData.map((item) => {
 					return <Link href={`/soups/${item.id}`} key={item.id}>
@@ -57,7 +57,7 @@ const SoupId = ({itemId}) => {
 export default SoupId;
 
 export async function getServerSideProps(context) {
-	const res = await fetch(`https://food-nodejs.herokuapp.com/api/soups/${context.params.id} `);
+	const res = await fetch(`https://food-nodejs.herokuapp.com/api/soups/${context.params.id}`);
 	const itemId = await res.json();
 
 	return {

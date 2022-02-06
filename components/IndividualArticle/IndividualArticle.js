@@ -2,7 +2,7 @@ import React from 'react';
 import Link from "next/link";
 import Image from "next/image";
 
-const IndividualArticle = ({title, description, img, id, price, subtitle, ingredients}) => {
+const IndividualArticle = ({title, description, img, id, price, subtitle, ingredients, img_owner}) => {
 
 
 	return (<div className="p-1  bg-slate-100 rounded-md shadow-md font-dosis lg:text-xl" data-testid={id}>
@@ -21,7 +21,7 @@ const IndividualArticle = ({title, description, img, id, price, subtitle, ingred
 				</div>
 			</div>
 
-			<div className="relative">
+			<div className="relative" data-testid={img_owner.name}>
 				<p className="absolute top-10 left-10 z-10 text-white text-2xl animate-pulse" data-testid={title?.slice(0,9)}>
 					buy it!
 				</p>
