@@ -18,6 +18,8 @@ const SoupId = ({itemId}) => {
 	const subtitle = itemId.message.subtitle;
 	const image = itemId.message.img;
 	const id = itemId.message.id;
+	const owner = itemId.message.img_owner.name;
+
 
 	useEffect(() => {
 		const getData = async () => {
@@ -32,8 +34,8 @@ const SoupId = ({itemId}) => {
 	return (
 		<div>
 			{!itemId && <p>no items</p>}
-			{/*{itemId && <IdComponent title={title} description={description} price={price} id={id} img={image}*/}
-			{/*						handleCart={handleCart} ingredients={ingredients} subtitle={subtitle}/>}*/}
+			{itemId && <IdComponent title={title} description={description} price={price} id={id} img={image}
+									handleCart={handleCart} ingredients={ingredients} subtitle={subtitle} img_owner={owner}/>}
 			<ul className="flex flex-col md:flex-row flex-wrap">
 				{soupData.map((item) => {
 					return <Link href={`/soups/${item.id}`} key={item.id}>

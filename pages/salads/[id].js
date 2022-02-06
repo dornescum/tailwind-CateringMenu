@@ -21,6 +21,9 @@ const SaladId = ({itemId}) => {
 	const subtitle = itemId.message.subtitle;
 	const image = itemId.message.img;
 	const id = itemId.message.id;
+	const owner = itemId.message.img_owner.name;
+
+
 	console.log(subtitle);
 
 	useEffect(() => {
@@ -40,7 +43,7 @@ const SaladId = ({itemId}) => {
 			{!itemId && <p>no items</p>}
 			{itemId &&
 				<IdComponent title={title} description={description} price={price} id={id} img={image}
-							 handleCart={handleCart} ingredients={ingredients} subtitle={subtitle}/>
+							 handleCart={handleCart} ingredients={ingredients} subtitle={subtitle} img_owner={owner}/>
 			}
 
 			<ul className="flex flex-col md:flex-row flex-wrap">

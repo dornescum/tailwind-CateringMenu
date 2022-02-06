@@ -21,7 +21,7 @@ const IndividualArticle = ({title, description, img, id, price, subtitle, ingred
 				</div>
 			</div>
 
-			<div className="relative" data-testid={img_owner.name}>
+			<div className="relative" data-testid={img_owner ? `${img_owner.name}`: 'test-id'}>
 				<p className="absolute top-10 left-10 z-10 text-white text-2xl animate-pulse" data-testid={title?.slice(0,9)}>
 					buy it!
 				</p>

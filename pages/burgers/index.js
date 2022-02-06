@@ -4,6 +4,7 @@ import IndividualPage from "../../components/IndividualPage/IndividualPage";
 import IndividualArticle from "../../components/IndividualArticle/IndividualArticle";
 
 const Index = ({items}) => {
+	console.log(items);
 	return (
 		<div>
 			<div className="bg-white">
@@ -20,6 +21,7 @@ const Index = ({items}) => {
 															   description={item?.description}
 															   img={item?.img} id={item?.id} price={item?.price}
 															   subtitle={item?.subtitle} ingredients={item?.ingredients}
+															   img_owner={item?.img_owner}
 											/>
 										</li>
 									</a>
