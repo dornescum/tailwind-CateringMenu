@@ -4,7 +4,7 @@ import IndividualPage from "../../components/IndividualPage/IndividualPage";
 import IndividualArticle from "../../components/IndividualArticle/IndividualArticle";
 
 const Index = ({items}) => {
-	console.log(items);
+	// console.log(items);
 	return (
 		<div>
 			<div className="bg-white">

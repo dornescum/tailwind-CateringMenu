@@ -34,7 +34,7 @@ const BeefId = ({itemId}) => {
 	return (
 		<div>
 			{!itemId && <p>no items</p>}
-			{itemId &&<IdComponent title={title} description={description} price={price} id={id} img={image}
+			{itemId && <IdComponent title={title} description={description} price={price} id={id} img={image}
 								   handleCart={handleCart} ingredients={ingredients} subtitle={subtitle} img_owner={owner}/>}
 
 			<ul className="flex flex-col md:flex-row flex-wrap">
@@ -46,7 +46,8 @@ const BeefId = ({itemId}) => {
 									<IndividualArticle title={item?.title}
 													   description={item?.description}
 													   img={item?.img} id={item?.id} price={item?.price}
-													   subtitle={item?.subtitle} ingredients={item?.ingredients}/>
+													   subtitle={item?.subtitle} ingredients={item?.ingredients}
+													   img_owner={item?.img_owner}/>
 								</div>
 							</li>
 						</a>
