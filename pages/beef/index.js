@@ -2,18 +2,18 @@ import React from 'react';
 import Link from "next/link";
 import Image from "next/image";
 import IndividualArticle from "../../components/IndividualArticle/IndividualArticle";
+import Title from "../../components/Title/Title";
 
 
 const Index = ({beef}) => {
 	return (
 		<div>
-			<div className="bg-white" data-testid="beef">
-				<h1 className="text-center m-2 p-1 text-4xl animate-bounce">Beef</h1>
+			<div className="bg-white mt-16 md:mt-20" data-testid="beef">
+				<Title>{beef[0].subtitle}</Title>
 				{!beef && <p>no beef</p>}
 				{beef && <div className="m-2">
 					<ul className="flex flex-col md:flex-row flex-wrap" data-testid="beef-ul">
 						{beef.map((item) => {
-							console.log(item);
 							return <Link href={`/beef/${item.id}`} key={item.id}>
 								<a className="basis-1/2 md:basis-1/3">
 									<li className="p-2 m-1">

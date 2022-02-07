@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import SidebarMenu from "./SidebarMenu";
-import {MdClose, MdFormatAlignRight, MdChevronLeft} from "react-icons/md";
+import {MdClose, MdFormatAlignRight, MdChevronLeft, MdChevronRight} from "react-icons/md";
 
 
 
@@ -9,10 +9,11 @@ const NewNavbar = () => {
 
 	return (
 		<div className="relative">
-			<div className="flex justify-between py-2 z-10">
+			<div className="flex justify-between z-10 py-2 fixed w-full top-0 bg-stone-50">
 						<div className="flex items-center pl-4 cursor-pointer" onClick={() => setShowSidebar(!showSidebar)}>
 							<div className='bg-primary text-white h-8 w-8 rounded-md flex items-center justify-center'>
-								<MdChevronLeft />
+								{showSidebar ? <MdChevronRight /> : <MdChevronLeft />}
+								{/*<MdChevronLeft />*/}
 							</div>
 							<h1 className="text-2xl w-36 pl-4">Menu</h1>
 						</div>

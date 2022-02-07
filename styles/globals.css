@@ -5,11 +5,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/*todo de schimbat font general*/
-/*.html{*/
-/*    font-family: 'Dongle', sans-serif;*/
-/*}*/
 
-/*@layer base {*/
-/*    font-family: 'Dongle', sans-serif;*/
-/*}*/
+.sidebar{
+    animation: anim-right .2s ease-in-out;
+}
+@keyframes anim-right {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+
+}

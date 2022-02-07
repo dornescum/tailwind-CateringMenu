@@ -18,13 +18,13 @@ const styling = {
 
 const Hero = () => {
 	return (
-		<div className='relative'>
+		<div className='relative mt-10'>
 			<Image src={hero} className='w-full h-24' width="100%" height="30%" layout="responsive" objectFit="cover"
 				    alt='pasta image plate'/>
 
 			<div className='absolute inset-6 md:inset-10 lg:inset-20 xl:inset-40'>
-				<h1 className='text-pink-300 text-base md:text-4xl lg:text-6xl xl:text-8xl'>Best food in town</h1>
-				<p className='text-pink-300 lg:text-4xl lg:py-2'>09090909</p>
+				<h1 className='text-green-600 text-base md:text-4xl lg:text-6xl xl:text-8xl'><span className='italic'>Best</span> food in town</h1>
+				<p className='text-green-600 lg:text-4xl py-2 lg:py-4'>09090909</p>
 			</div>
 		</div>
 	);

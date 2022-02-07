@@ -7,20 +7,12 @@ import Categories from "../components/FoodTemplate/Categories";
 import SliderComponent from "../components/SliderComponent/Slider";
 
 
+
 function HomePage(props) {
 	const {products} = props;
 
 	return (
-		<main className="overflow-hidden">
-			{/*<Head>*/}
-			{/*	<meta name="viewport" content="initial-scale=1.0, width=device-width"/>*/}
-			{/*	<meta name="virtual menu" content="virtual catering delivery company"/>*/}
-			{/*	<meta name='Next js' content='Html 5, Css 3, Javascript, React js, Next js, Tailwind css'/>*/}
-			{/*	<meta name='author' content='Mihai Dornescu'/>*/}
-			{/*	<link rel="icon" href="/favicon.ico"/>*/}
-			{/*	<title>Best food in town</title>*/}
-			{/*</Head>*/}
-			{/*==============*/}
+		<main className="overflow-hidden font-dosis">
 			<Layout>
 				<Hero/>
 				<FoodTemplate/>
@@ -32,7 +24,6 @@ function HomePage(props) {
 						</div>;
 					})}
 				</div>
-				{/*==================*/}
 				<SliderComponent/>
 			</Layout>
 		</main>

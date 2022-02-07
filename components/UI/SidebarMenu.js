@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from "next/link";
 import {MdChevronRight} from "react-icons/md";
+import FOOD from '../../public/assets/svg/food.svg'
 
 
 
@@ -19,17 +20,17 @@ const menus = [
 ];
 
 const SidebarMenu = (props) => {
-	return (<aside className="absolute  h-screen z-50 transition-all
-		bg-gray-200 text-gray-600 w-64 top-0 left-0 opacity-100 overflow-y-auto">
-		<div className="text-center cursor-pointer transition-all duration-700 ease-out delay-700">
-					<div className="flex items-center py-2 pr-8 bg-gray-200 justify-between">
-						<h1 className="text-2xl w-36 text-gray-600">Menu</h1>
-						<div className="bg-primary text-white rounded h-6 w-6 items-center flex justify-center"
-							 onClick={props.onClose}>
-							<MdChevronRight/>
-						</div>
-					</div>
-		</div>
+	return (<aside className="fixed h-screen z-50 transition-all
+		bg-gray-200 text-gray-600 w-64 top-12 left-0 opacity-100 overflow-y-auto sidebar rounded-md">
+		{/*<div className="text-center cursor-pointer transition-all duration-700 ease-out delay-700">*/}
+		{/*			<div className="flex items-center py-2 pr-8 bg-gray-200 justify-between">*/}
+		{/*				<h1 className="text-2xl w-36 text-gray-600">Menu</h1>*/}
+		{/*				<div className="bg-primary text-white rounded h-6 w-6 items-center flex justify-center"*/}
+		{/*					 onClick={props.onClose}>*/}
+		{/*					<MdChevronRight/>*/}
+		{/*				</div>*/}
+		{/*			</div>*/}
+		{/*</div>*/}
 		<nav>
 			<div className="flex flex-col py-4">
 				{menus.map((link) => {
@@ -41,6 +42,10 @@ const SidebarMenu = (props) => {
 				})}
 			</div>
 		</nav>
+		<div className='flex justify-center items-center h-48'>
+			<h3>LOGO</h3>
+			{/*<img src={FOOD} alt="food logo"/>*/}
+		</div>
 	</aside>);
 };
 

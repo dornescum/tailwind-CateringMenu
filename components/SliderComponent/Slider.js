@@ -22,7 +22,7 @@ const SliderComponent = () => {
 		cssEase: "linear"
 	};
 	return (<div className="mt-2 mb-8 mx-4 w-full ">
-			<h2 className="my-2 font-bold pl-2 md:pl-12">Recommendation</h2>
+			<h2 className="my-2 font-bold pl-2 md:pl-12">Recommendations</h2>
 			<Slider {...settings}>
 				<div className="p-1">
 					<Link href="/beef">

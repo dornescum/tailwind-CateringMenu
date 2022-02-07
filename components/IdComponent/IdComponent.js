@@ -10,7 +10,7 @@ const IdComponent = ({title, description, id, price, img, handleCart, subtitle, 
 
 
 	return (<div className="flex flex-col lg:flex-row justify-around bg-slate-100 mx-4 justify-center items-center
-		rounded-md shadow-md font-dosis" data-testid={title.slice(0, 2)}>
+		rounded-md shadow-md font-dosis mt-16 md:mt-20" data-testid={title.slice(0, 2)}>
 			<div className="text-justify m-2 p-1 " data-testid={title.slice(2, 4)}>
 				<p className="mx-0 my-2 md:my-4 md:mx-2 font-bold text-4xl capitalize text-center"
 				   data-testid={title.slice(1, 7)}>

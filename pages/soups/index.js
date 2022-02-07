@@ -2,6 +2,7 @@ import React from 'react';
 import Link from "next/link";
 import IndividualPage from "../../components/IndividualPage/IndividualPage";
 import IndividualArticle from "../../components/IndividualArticle/IndividualArticle";
+import Title from "../../components/Title/Title";
 
 
 const Index = ({items}) => {
@@ -10,7 +11,8 @@ const Index = ({items}) => {
 	return (
 		<div>
 			<div className="bg-white">
-				<h1 className="text-center m-2 p-1 text-4xl animate-bounce">Soups</h1>
+				<Title>{items[0].subtitle}</Title>
+
 				{!items && <p>no items</p>}
 				{items &&
 					<div className="m-2">

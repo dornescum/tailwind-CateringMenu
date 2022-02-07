@@ -7,7 +7,7 @@ const Index = () => {
 		showMessage(true)
 	};
 	return (
-		<div className="flex items-center justify-center min-h-min">
+		<div className="flex items-center justify-center min-h-min mt-16 md:mt-20">
 			<div className={`flex flex-col form-container ${message ? "bg-red-200": ""}`}>
 				{message && <div>
 					<p className='bg-green-600 pl-4'>
