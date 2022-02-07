@@ -37,7 +37,7 @@ const DessertId = ({itemId}) => {
 									handleCart={handleCart} ingredients={ingredients} subtitle={subtitle} img_owner={owner}/>}
 			<ul className="flex flex-col md:flex-row flex-wrap">
 				{dessertData.map((item) => {
-					return <Link href={`/pasta/${item.id}`} key={item.id}>
+					return <Link href={`/dessert/${item.id}`} key={item.id}>
 						<a className="basis-1/2 md:basis-1/3">
 							<li className="p-2 m-4">
 								<div className="p-1  bg-slate-100 rounded-md shadow-md">
