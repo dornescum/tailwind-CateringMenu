@@ -1,57 +1,48 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import ArticleId from "../../components/ArticleId/ArticleId";
 import IndividualPageProduct from "../../components/IndividualPage/IndividualPage";
 import Link from "next/link";
-
-
-const images = [
-	{
-		id: 1,
-		title: 'pasta 1',
-		link: 'https://images.unsplash.com/photo-1574969903809-3f7a1668ceb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGFzdGElMjBjYXJib25hcmF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
-	},
-	{
-		id: 2,
-		title: 'pasta 2',
-		link: 'https://images.unsplash.com/photo-1574969903809-3f7a1668ceb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGFzdGElMjBjYXJib25hcmF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
-	},
-	{
-		id: 3,
-		title: 'pasta 3',
-		link: 'https://images.unsplash.com/photo-1574926053821-79c5e338a933?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cGFzdGElMjBjYXJib25hcmF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
-	},
-];
+import {ValueContext} from "../../context/ValueContext";
+import IdComponent from "../../components/IdComponent/IdComponent";
+import IndividualArticle from "../../components/IndividualArticle/IndividualArticle";
 
 const SoupId = ({itemId}) => {
-	const pastaImageId = 'https://images.unsplash.com/photo-1588013273468-315fd88ea34c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGFzdGElMjBjYXJib25hcmF8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60';
-	const [data, setData] = useState([]);
+	const {handleCart} = useContext(ValueContext);
 
+	const [pastaData, setPastaData] = useState([]);
+	const title = itemId.message.title;
+	const description = itemId.message.description;
+	const price = itemId.message.price;
+	const ingredients = itemId.message.ingredients;
+	const subtitle = itemId.message.subtitle;
+	const image = itemId.message.img;
+	const id = itemId.message.id;
+	const owner = itemId.message.img_owner.name;
+
+	const getData = async () => {
+		const res = await fetch('https://food-nodejs.herokuapp.com/api/pasta');
+		const data = await res.json();
+		setPastaData(data);
+	};
 	useEffect(() => {
-		const getData = async () => {
-			const res = await fetch('https://jsonplaceholder.typicode.com/posts/?_limit=12');
-			const data = await res.json();
-			setData(data);
-		};
 		getData();
 	}, []);
-
-	const randomPhoto = Math.floor(Math.random() * images.length);
-	const {link} = images[randomPhoto];
-
 	return (
 		<div>
 			{!itemId && <p>no items</p>}
-			{itemId && <ArticleId title={itemId?.title} body={itemId?.body}
-								  img={pastaImageId}
-			/>}
+			{itemId && <IdComponent title={title} description={description} price={price} id={id} img={image}
+									handleCart={handleCart} ingredients={ingredients} subtitle={subtitle} img_owner={owner}/>}
 			<ul className="flex flex-col md:flex-row flex-wrap">
-				{data.map((item) => {
+				{pastaData.map((item) => {
 					return <Link href={`/pasta/${item.id}`} key={item.id}>
 						<a className="basis-1/2 md:basis-1/3">
 							<li className="p-2 m-4">
 								<div className="p-1  bg-slate-100 rounded-md shadow-md">
-									<IndividualPageProduct title={item?.title} body={item?.body}
-														   img={link}/>
+									<IndividualArticle title={item?.title}
+													   description={item?.description}
+													   img={item?.img} id={item?.id} price={item?.price}
+													   subtitle={item?.subtitle} ingredients={item?.ingredients}
+													   img_owner={item?.img_owner}/>
 								</div>
 							</li>
 						</a>
@@ -65,7 +56,7 @@ const SoupId = ({itemId}) => {
 export default SoupId;
 
 export async function getServerSideProps(context) {
-	const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.id} `);
+	const res = await fetch(`https://food-nodejs.herokuapp.com/api/pasta/${context.params.id}`);
 	const itemId = await res.json();
 
 	return {
