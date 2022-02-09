@@ -93,9 +93,9 @@ const TheFooter = () => {
 					</Link>
 				</li>
 				<li className="basis-1/3 cursor-pointer" onClick={handleCartInfo} data-testid='fourth-link'>
-					<div className="flex items-center justify-center" data-testid='fourth-link-div'>
+					<div className="flex items-center justify-center relative" data-testid='fourth-link-div'>
 						<MdShoppingBasket className="h-8 w-8 text-gray-600" data-testid='shopping-card'/>
-						<span className="bg-primary text-white rounded-full absolute bottom-5
+						<span className="bg-primary text-white rounded-full absolute bottom-3
 						right-4 md:right-6 lg:right-14 xl:right-36 xl:mr-2 h-6 w-6 flex justify-center items-center" data-testid='initial-value'>{initialValue}</span>
 						{showCart && <ProductsCart />}
 					</div>

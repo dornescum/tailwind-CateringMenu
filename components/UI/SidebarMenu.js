@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from "next/link";
 import {MdChevronRight} from "react-icons/md";
-import FOOD from '../../public/assets/svg/food.svg'
+import Logo from '../Logo/Logo'
 
 
 
@@ -43,9 +43,10 @@ const SidebarMenu = (props) => {
 			</div>
 		</nav>
 		<div className='flex justify-center items-center h-48'>
-			<h3>LOGO</h3>
-			{/*<img src={FOOD} alt="food logo"/>*/}
+			{/*<h3>LOGO</h3>*/}
+			<Logo />
 		</div>
+
 	</aside>);
 };
 
